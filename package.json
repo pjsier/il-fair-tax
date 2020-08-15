@@ -1,0 +1,70 @@
+{
+  "name": "il-fair-tax",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write **/*.{js,css} !dist",
+    "start": "NODE_ENV=development run-p -l start:*",
+    "start:webpack": "webpack --config webpack.config.js --progress --color --watch",
+    "start:eleventy": "eleventy --serve",
+    "build": "NODE_ENV=production run-s -l build:*",
+    "build:clean": "rm -rf dist",
+    "build:webpack": "webpack --config webpack.config.prod.js --color",
+    "build:eleventy": "eleventy",
+    "analyze": "source-map-explorer dist/**/*.js dist/**/*.js.map"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "css-loader": "^4.2.1",
+    "eslint": "^7.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "file-loader": "^6.0.0",
+    "html-minifier": "^4.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.10.0",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
+    "prettier-eslint": "^11.0.0",
+    "source-map-explorer": "^2.4.2",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended"
+    ],
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "plugins": [
+      "import"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    }
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  }
+}
