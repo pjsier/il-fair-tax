@@ -9,7 +9,7 @@ const config = {
   devtool: "source-map",
   mode: "production",
   entry: {
-    app: [path.resolve("./src/index.js")],
+    app: [path.resolve("./src/js/index.js")],
   },
   output: {
     path: path.resolve("./dist/static"),
