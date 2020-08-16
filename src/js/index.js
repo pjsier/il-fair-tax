@@ -53,9 +53,7 @@ function formToObj(form) {
   return formObj
 }
 
-function handleForm() {
-  const form = document.querySelector(`form[name="calculator"]`)
-
+function handleForm(form) {
   const params = formToObj(form)
 
   const currentTax = calculateCurrentTax(params)
@@ -107,21 +105,18 @@ function setupJointFilerToggles(form) {
   updateFields(form.querySelector(`#statusJoint:checked`) === null)
 }
 
-function addBlurListeners(form) {
+function addInputListeners(form) {
   form.querySelectorAll("input").forEach((input) => {
-    input.addEventListener("blur", () => {
-      input.checkValidity()
-      handleForm()
-    })
-    input.addEventListener("change", handleForm)
-    input.addEventListener("input", handleForm)
+    input.addEventListener("blur", () => input.checkValidity())
+    input.addEventListener("change", () => handleForm(form))
+    input.addEventListener("input", () => handleForm(form))
   })
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form[name='calculator']")
   searchParamsToForm(form)
-  addBlurListeners(form)
+  addInputListeners(form)
   setupJointFilerToggles(form)
-  handleForm()
+  handleForm(form)
 })
