@@ -1,5 +1,25 @@
 ---
 layout: base
-title: Hello world
+title: Fair Tax Calculator
 ---
-<h1>Hello world</h1>
+<h1>Fair Tax Calculator</h1>
+
+{% include "calculator.njk" %}
+
+<div class="results">
+  <p>
+    <span>Fair Tax:</span>
+    <span id="fairTaxAmount">
+    </span>
+  </p>
+  <p>
+    <span> Current Tax:</span>
+    <span id="currentTaxAmount">
+    </span>
+  </p>
+  <p>
+    <span>Difference:</span>
+    <span id="difference">
+    </span>
+  </p>
+</div>

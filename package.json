@@ -66,5 +66,8 @@
     "singleQuote": false,
     "tabWidth": 2,
     "trailingComma": "es5"
+  },
+  "dependencies": {
+    "object.fromentries": "^2.0.2"
   }
 }

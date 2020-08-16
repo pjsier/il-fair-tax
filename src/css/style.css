@@ -1,3 +1,11 @@
 html {
   background-color: white;
 }
+
+label.checkbox {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,78 @@
+<form name="calculator" method="GET" action="">
+  <fieldset>
+    <legend>
+      Filing status
+    </legend>
+    <div>
+      <label for="statusSingle">
+        Single
+      </label>
+      <input type="radio" name="status" id="statusSingle" value="single" checked />
+    </div>
+    <div>
+      <label for="statusJoint">
+        Joint
+      </label>
+      <input type="radio" name="status" id="statusJoint" value="joint" />
+    </div>
+  </fieldset>
+  <label class="checkbox">
+    <input type="checkbox" name="older65" />
+    <span tabindex="-1">
+      Older 65?
+    </span>
+  </label>
+  <label class="checkbox hidden" data-status="joint">
+    <input type="checkbox" name="spouseOlder65" />
+    <span tabindex="-1">
+      Spouse older 65?
+    </span>
+  </label>
+  <label class="checkbox">
+    <input type="checkbox" name="legallyBlind" />
+    <span tabindex="-1">
+      Blind?
+    </span>
+  </label>
+  <label class="checkbox hidden" data-status="joint">
+    <input type="checkbox" name="spouseLegallyBlind" />
+    <span tabindex="-1">
+      Spouse blind?
+    </span>
+  </label>
+  <fieldset>
+    <legend>Dependents</legend>
+    <div>
+      <div>
+        <label for="numDependents">
+          # Dependents
+        </label>
+        <input type="number" min="0" name="numDependents" id="numDependents" />
+      </div>
+      <div>
+        <label for="numDependentsUnder17">
+          # Dependents under 17
+        </label>
+        <input type="number" min="0" name="numDependentsUnder17" id="numDependentsUnder17" />
+      </div>
+    </div>
+  </fieldset>
+  <div>
+    <label for="propertyTaxes">
+      2018 Property taxes
+    </label>
+    <input type="number" name="propertyTaxes" id="propertyTaxes" min="0" />
+  </div>
+  <div>
+    <label for="k12Expenses">
+      K-12 Expenses
+    </label>
+    <input type="number" name="k12Expenses" id="k12Expenses" min="0" step="1" />
+  </div>
+  <div>
+    <label for="income">
+      Income
+    </label>
+    <input type="number" name="income" id="income" min="0" />
+  </div>
+</form>

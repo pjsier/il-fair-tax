@@ -1,27 +1,9 @@
+export const STATUS_SINGLE = "single"
+export const STATUS_JOINT = "joint"
+
 const CURRENT_TAX_RATE = 0.0495
 const STATUS_SINGLE_MAX = 250000
 const STATUS_JOINT_MAX = 500000
-
-const SINGLE_FILER_EXEMPT = 2225
-const JOINT_FILER_EXEMPT = 4450
-const DEPENDENT_EXEMPT = 2225
-
-// TODO: Use HTML native validation? Trigger manually on blur?
-// https://daverupert.com/2017/11/happier-html5-forms/
-export function processInputs({
-  income,
-  filingStatus,
-  older65,
-  spouseOlder65,
-  legallyBlind,
-  spouseLegallyBlind,
-  numDependents,
-  numDependentsUnder17,
-  propertyTaxes,
-  k12Expenses,
-}) {
-  return { valid: false, message: "Invalid" }
-}
 
 export function calculateCurrentTax({
   income,
@@ -83,7 +65,6 @@ export function calculateFairTax({
     { rate: 0.0785, gt: 350000, lte: 750000 },
   ]
 
-  // TODO: Move this into rates? Or leave split?
   const SINGLE_FILE_TOP_RATE = 0.0799
 
   const JOINT_FILE_RATES = [
@@ -129,12 +110,9 @@ export function calculateFairTax({
   // TODO: When is taxable vs gross income used?
   const taxAmount = calculateGraduatedTax({
     income: taxableIncome,
-    rates:
-      status === SINGLE_FILER_EXEMPT ? SINGLE_FILE_RATES : JOINT_FILE_RATES,
+    rates: status === STATUS_SINGLE ? SINGLE_FILE_RATES : JOINT_FILE_RATES,
     maxRate:
-      status === SINGLE_FILER_EXEMPT
-        ? SINGLE_FILE_TOP_RATE
-        : JOINT_FILE_TOP_RATE,
+      status === STATUS_SINGLE ? SINGLE_FILE_TOP_RATE : JOINT_FILE_TOP_RATE,
   })
 
   const totalCredits = calculateFairTaxCredits({
@@ -148,7 +126,6 @@ export function calculateFairTax({
   return Math.max(0, taxAmount - totalCredits)
 }
 
-// TODO: Assumes exemption amount in input, might need multipliers?
 function calculateExemptions({
   status,
   older65,
@@ -157,16 +134,29 @@ function calculateExemptions({
   spouseLegallyBlind,
   numDependents,
 }) {
+  const SINGLE_FILE_EXEMPT = 2225
+  const JOINT_FILE_EXEMPT = 4450
+  const DEPENDENT_EXEMPT = 2225
+
+  const EXEMPTION_OLDER_65 = 1000
+  const EXEMPTION_SPOUSE_OLDER_65 = 1000
+
+  const EXEMPTION_BLIND = 1000
+  const EXEMPTION_SPOUSE_BLIND = 1000
+
   const exemptions = [
-    status,
-    older65,
-    legallyBlind,
+    status === STATUS_SINGLE ? SINGLE_FILE_EXEMPT : JOINT_FILE_EXEMPT,
+    older65 ? EXEMPTION_OLDER_65 : 0,
+    legallyBlind ? EXEMPTION_BLIND : 0,
     numDependents * DEPENDENT_EXEMPT,
   ]
-  const jointExemptions = [spouseOlder65, spouseLegallyBlind]
+  const jointExemptions = [
+    spouseOlder65 ? EXEMPTION_SPOUSE_OLDER_65 : 0,
+    spouseLegallyBlind ? EXEMPTION_SPOUSE_BLIND : 0,
+  ]
 
   const eligibleExemptions = exemptions.concat(
-    status === JOINT_FILER_EXEMPT ? jointExemptions : []
+    status === STATUS_JOINT ? jointExemptions : []
   )
 
   const exemptionTotal = eligibleExemptions.reduce((a, b) => a + b, 0)
@@ -231,8 +221,8 @@ function calculatePropertyTaxCredit({
     : CURRENT_PROPERTY_TAX_CREDIT_RATE
 
   if (
-    (status === SINGLE_FILER_EXEMPT && income <= STATUS_SINGLE_MAX) ||
-    (status === JOINT_FILER_EXEMPT && income <= STATUS_JOINT_MAX)
+    (status === STATUS_SINGLE && income <= STATUS_SINGLE_MAX) ||
+    (status === STATUS_JOINT && income <= STATUS_JOINT_MAX)
   ) {
     return propertyTaxes * propertyTaxCreditRate
   }
@@ -241,8 +231,8 @@ function calculatePropertyTaxCredit({
 
 function calculateEducationCredit({ income, status, k12Expenses }) {
   if (
-    (status === SINGLE_FILER_EXEMPT && income > STATUS_SINGLE_MAX) ||
-    (status === JOINT_FILER_EXEMPT && income > STATUS_JOINT_MAX)
+    (status === STATUS_SINGLE && income > STATUS_SINGLE_MAX) ||
+    (status === STATUS_JOINT && income > STATUS_JOINT_MAX)
   ) {
     return 0
   }
@@ -305,8 +295,7 @@ function calculateEIC({ income, status, numDependentsUnder17 }) {
   } = EIC_2018_LEVELS[eligibleChildren]
 
   const roundedIncome = income <= 0 ? 0 : Math.floor(income / 50) * 50 + 25
-  const marriagePenaltyRelief =
-    status === JOINT_FILER_EXEMPT ? marriageRelief : 0
+  const marriagePenaltyRelief = status === STATUS_JOINT ? marriageRelief : 0
   const grossEic = Math.min(roundedIncome, baseAmount) * creditRate
   const subtractAmount = Math.max(
     0,
@@ -327,7 +316,7 @@ function calculateFairTaxChildCredit({ income, status, numDependentsUnder17 }) {
   const PER_CHILD_CREDIT_AMOUNT = 100
 
   const childCreditCutoff =
-    status === SINGLE_FILER_EXEMPT
+    status === STATUS_SINGLE
       ? SINGLE_FILE_CHILD_CREDIT_CUTOFF
       : JOINT_FILE_CHILD_CREDIT_CUTOFF
 
