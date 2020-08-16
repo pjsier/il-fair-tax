@@ -100,11 +100,11 @@ function setupJointFilerToggles(form) {
 
   form.querySelectorAll(`input[name="status"]`).forEach((input) => {
     input.addEventListener("change", () =>
-      updateFields(input.id !== "status_joint")
+      updateFields(input.id !== "statusJoint")
     )
   })
 
-  updateFields(form.querySelector(`#status_joint:checked`) === null)
+  updateFields(form.querySelector(`#statusJoint:checked`) === null)
 }
 
 function addBlurListeners(form) {
