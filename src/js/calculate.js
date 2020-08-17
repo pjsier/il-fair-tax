@@ -327,7 +327,7 @@ function calculateFairTaxChildCredit({ income, status, numDependentsUnder17 }) {
   )
   // Reduce the credit by $5 for each increment it's over the cutoffrate
   // The credit cannot go negative, so set a floor of 0
-  const perChildCredit = Math.min(
+  const perChildCredit = Math.max(
     0,
     PER_CHILD_CREDIT_AMOUNT -
       numIncrementsOverCutoff * INCOME_INCREMENT_CREDIT_REDUCTION
