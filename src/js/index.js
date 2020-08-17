@@ -1,7 +1,3 @@
-import fromEntries from "object.fromentries"
-
-import "./styles.js"
-
 import { calculateCurrentTax, calculateFairTax } from "./calculate"
 
 function searchParamsToForm(form) {
@@ -19,7 +15,7 @@ function searchParamsToForm(form) {
 
 function formObjToSearchParams(formObj) {
   const params = new URLSearchParams({
-    ...fromEntries(Object.entries(formObj).filter((entry) => entry[1])),
+    ...Object.fromEntries(Object.entries(formObj).filter((entry) => entry[1])),
   })
   window.history.replaceState(
     {},

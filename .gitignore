@@ -3,3 +3,4 @@
 node_modules
 dist/
 src/_includes/webpack.njk
+src/_includes/*.js
