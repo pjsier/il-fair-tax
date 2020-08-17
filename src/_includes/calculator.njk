@@ -3,17 +3,17 @@
     <legend>
       Filing status
     </legend>
-    <div>
+    <div class="radio-input">
+      <input type="radio" name="status" id="statusSingle" value="single" checked />
       <label for="statusSingle">
         Single
       </label>
-      <input type="radio" name="status" id="statusSingle" value="single" checked />
     </div>
-    <div>
+    <div class="radio-input">
+      <input type="radio" name="status" id="statusJoint" value="joint" />
       <label for="statusJoint">
         Joint
       </label>
-      <input type="radio" name="status" id="statusJoint" value="joint" />
     </div>
   </fieldset>
   <label class="checkbox">
@@ -42,14 +42,14 @@
   </label>
   <fieldset>
     <legend>Dependents</legend>
-    <div>
-      <div>
+    <div class="input-row">
+      <div class="number-input">
         <label for="numDependents">
           # Dependents
         </label>
         <input type="number" min="0" name="numDependents" id="numDependents" />
       </div>
-      <div>
+      <div class="number-input">
         <label for="numDependentsUnder17">
           # Dependents under 17
         </label>
@@ -57,19 +57,19 @@
       </div>
     </div>
   </fieldset>
-  <div>
+  <div class="number-input">
     <label for="propertyTaxes">
       2018 Property taxes
     </label>
     <input type="number" name="propertyTaxes" id="propertyTaxes" min="0" />
   </div>
-  <div>
+  <div class="number-input">
     <label for="k12Expenses">
       K-12 Expenses
     </label>
     <input type="number" name="k12Expenses" id="k12Expenses" min="0" step="1" />
   </div>
-  <div>
+  <div class="number-input">
     <label for="income">
       Income
     </label>

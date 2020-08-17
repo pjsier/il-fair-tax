@@ -6,8 +6,39 @@ fieldset {
   display: flex;
 }
 
+fieldset,
+label.checkbox,
+.number-input {
+  margin-bottom: 12px;
+}
+
 label.checkbox {
   display: block;
+}
+
+.radio-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 12px;
+}
+
+.radio-input input {
+  margin-right: 6px;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.input-row .number-input {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .hidden {

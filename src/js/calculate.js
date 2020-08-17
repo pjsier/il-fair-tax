@@ -109,7 +109,6 @@ export function calculateFairTax({
   })
   const taxableIncome = income - totalExemptions
 
-  // TODO: When is taxable vs gross income used?
   const taxAmount = calculateGraduatedTax({
     income: taxableIncome,
     rates: status === STATUS_SINGLE ? SINGLE_FILE_RATES : JOINT_FILE_RATES,
