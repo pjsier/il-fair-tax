@@ -2,5 +2,5 @@
 .vscode
 node_modules
 dist/
-src/_includes/webpack.njk
-src/_includes/*.js
+site/_includes/webpack.njk
+site/_includes/*.js

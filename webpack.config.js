@@ -97,8 +97,8 @@ const config = {
           : "[name].css",
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve("./src/_includes/webpack.html"),
-      filename: path.resolve("./src/_includes/webpack.njk"),
+      template: path.resolve("./site/_includes/webpack.html"),
+      filename: path.resolve("./site/_includes/webpack.njk"),
       hash: true,
       inject: false,
     }),
