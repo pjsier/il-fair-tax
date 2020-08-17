@@ -18,6 +18,7 @@ export function calculateCurrentTax({
   k12Expenses,
 }) {
   const totalExemptions = calculateExemptions({
+    income,
     status,
     older65,
     spouseOlder65,
@@ -98,6 +99,7 @@ export function calculateFairTax({
   const JOINT_FILE_TOP_RATE = 0.0799
 
   const totalExemptions = calculateExemptions({
+    income,
     status,
     older65,
     spouseOlder65,
@@ -127,6 +129,7 @@ export function calculateFairTax({
 }
 
 function calculateExemptions({
+  income,
   status,
   older65,
   spouseOlder65,
@@ -143,6 +146,14 @@ function calculateExemptions({
 
   const EXEMPTION_BLIND = 1000
   const EXEMPTION_SPOUSE_BLIND = 1000
+
+  // Filers over the status thresholds are ineligible for exemptions
+  if (
+    (status === STATUS_SINGLE && income >= STATUS_SINGLE_MAX) ||
+    (status === STATUS_JOINT && income >= STATUS_JOINT_MAX)
+  ) {
+    return 0
+  }
 
   const exemptions = [
     status === STATUS_SINGLE ? SINGLE_FILE_EXEMPT : JOINT_FILE_EXEMPT,
@@ -353,7 +364,6 @@ function calculateGraduatedTax({ income, rates, maxRate }) {
   // and add the eligible portion multiplied by the rate if so
   return sortedRates.reduce((taxes, { rate, gt, lte }) => {
     if (income > gt && income > lte) {
-      // TODO: Check for off-by-one errors here
       return taxes + (lte - gt) * rate
     } else if (income > gt) {
       return taxes + (income - gt) * rate
