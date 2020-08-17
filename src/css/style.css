@@ -2,6 +2,10 @@ html {
   background-color: white;
 }
 
+fieldset {
+  display: flex;
+}
+
 label.checkbox {
   display: block;
 }
