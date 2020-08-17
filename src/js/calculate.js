@@ -302,7 +302,7 @@ function calculateEIC({ income, status, numDependentsUnder17 }) {
     marriageRelief,
     creditRate,
     phaseOutRate,
-  } = EIC_2018_LEVELS[eligibleChildren]
+  } = EIC_2018_LEVELS[Math.min(3, eligibleChildren)]
 
   const roundedIncome = income <= 0 ? 0 : Math.floor(income / 50) * 50 + 25
   const marriagePenaltyRelief = status === STATUS_JOINT ? marriageRelief : 0
