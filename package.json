@@ -83,5 +83,8 @@
     "tabWidth": 2,
     "trailingComma": "es5"
   },
+  "mocha": {
+    "exclude": "test/generate-test-data.js"
+  },
   "dependencies": {}
 }
