@@ -38,7 +38,10 @@ export function calculateCurrentTax({
     k12Expenses,
   })
 
-  return Math.max(0, taxAmount - totalCredits)
+  const eic = calculateEIC({ income, status, numDependentsUnder17 })
+
+  // EIC can reduce tax bill below 0
+  return Math.max(0, taxAmount - totalCredits) - eic
 }
 
 // https://www.ilga.gov/legislation/BillStatus.asp?DocNum=687&GAID=15&DocTypeID=SB&LegId=116624&SessionID=108&GA=101
@@ -124,7 +127,10 @@ export function calculateFairTax({
     k12Expenses,
   })
 
-  return Math.max(0, taxAmount - totalCredits)
+  const eic = calculateEIC({ income, status, numDependentsUnder17 })
+
+  // EIC can reduce tax bill below 0
+  return Math.max(0, taxAmount - totalCredits) - eic
 }
 
 function calculateExemptions({
@@ -177,7 +183,6 @@ function calculateExemptions({
 function calculateCurrentCredits({
   income,
   status,
-  numDependentsUnder17,
   propertyTaxes,
   k12Expenses,
 }) {
@@ -188,9 +193,8 @@ function calculateCurrentCredits({
     isFairTax: false,
   })
   const k12Credits = calculateEducationCredit({ income, status, k12Expenses })
-  const eic = calculateEIC({ income, status, numDependentsUnder17 })
 
-  return propertyTaxCredits + k12Credits + eic
+  return propertyTaxCredits + k12Credits
 }
 
 function calculateFairTaxCredits({
@@ -207,14 +211,14 @@ function calculateFairTaxCredits({
     isFairTax: true,
   })
   const k12Credits = calculateEducationCredit({ income, status, k12Expenses })
+
   const childCredits = calculateFairTaxChildCredit({
     income,
     status,
     numDependentsUnder17,
   })
-  const eic = calculateEIC({ income, status, numDependentsUnder17 })
 
-  return propertyTaxCredits + k12Credits + childCredits + eic
+  return propertyTaxCredits + k12Credits + childCredits
 }
 
 function calculatePropertyTaxCredit({
@@ -330,10 +334,12 @@ function calculateFairTaxChildCredit({ income, status, numDependentsUnder17 }) {
       ? SINGLE_FILE_CHILD_CREDIT_CUTOFF
       : JOINT_FILE_CHILD_CREDIT_CUTOFF
 
+  // TODO: Is this whole or partial increments? Going off of Fair Tax site which uses partial
   // Calculate the increments of $2k above the credit cutoff that an income is
   const numIncrementsOverCutoff = Math.max(
     0,
-    Math.floor((income - childCreditCutoff) / CHILD_CREDIT_INCOME_INCREMENT)
+    (income - childCreditCutoff) / CHILD_CREDIT_INCOME_INCREMENT
+    // Math.floor((income - childCreditCutoff) / CHILD_CREDIT_INCOME_INCREMENT)
   )
   // Reduce the credit by $5 for each increment it's over the cutoffrate
   // The credit cannot go negative, so set a floor of 0
