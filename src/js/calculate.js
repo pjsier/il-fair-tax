@@ -1,7 +1,6 @@
 export const STATUS_SINGLE = "single"
 export const STATUS_JOINT = "joint"
 
-const CURRENT_TAX_RATE = 0.0495
 const STATUS_SINGLE_MAX = 250000
 const STATUS_JOINT_MAX = 500000
 
@@ -17,6 +16,8 @@ export function calculateCurrentTax({
   propertyTaxes,
   k12Expenses,
 }) {
+  const CURRENT_TAX_RATE = 0.0495
+
   const totalExemptions = calculateExemptions({
     income,
     status,
