@@ -1,55 +1,10 @@
 import { calculateCurrentTax, calculateFairTax } from "./calculate"
-
-function searchParamsToForm(form) {
-  const searchParams = new URLSearchParams(window.location.search)
-
-  for (let [key, value] of searchParams.entries()) {
-    const input = form.elements[key]
-    if (input.type === "checkbox") {
-      input.checked = !!value
-    } else {
-      input.value = value
-    }
-  }
-}
-
-function formObjToSearchParams(formObj) {
-  const params = new URLSearchParams({
-    ...Object.fromEntries(Object.entries(formObj).filter((entry) => entry[1])),
-  })
-  window.history.replaceState(
-    {},
-    window.document.title,
-    `${window.location.protocol}//${window.location.host}${
-      window.location.pathname
-    }${params.toString() === `` ? `` : `?${params}`}`
-  )
-}
-
-function formToObj(form) {
-  const formObj = {}
-  const formNames = [
-    ...new Set(
-      Object.values(form.elements)
-        .map((input) =>
-          (input instanceof NodeList ? input[0] : input).getAttribute("name")
-        )
-        .filter((name) => !!name)
-    ),
-  ]
-  const formData = new FormData(form)
-
-  formNames.map((name) => {
-    let value = formData.get(name)
-    if (form.elements[name].type === "checkbox") {
-      value = !!value
-    } else if (name !== "status") {
-      value = +value
-    }
-    formObj[name] = value
-  })
-  return formObj
-}
+import {
+  searchParamsToForm,
+  formObjToSearchParams,
+  formToObj,
+  currencyStr,
+} from "./utils"
 
 function handleForm(form) {
   const params = formToObj(form)
@@ -67,25 +22,13 @@ function handleForm(form) {
 }
 
 function updateResults({ fairTaxAmount, currentTaxAmount, difference }) {
-  document.getElementById(
-    "fairTaxAmount"
-  ).innerText = fairTaxAmount.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  })
-  document.getElementById(
-    "currentTaxAmount"
-  ).innerText = currentTaxAmount.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  })
-  document.getElementById("difference").innerText = difference.toLocaleString(
-    "en-US",
-    {
-      style: "currency",
-      currency: "USD",
-    }
+  document.getElementById("fairTaxAmount").innerText = currencyStr(
+    fairTaxAmount
   )
+  document.getElementById("currentTaxAmount").innerText = currencyStr(
+    currentTaxAmount
+  )
+  document.getElementById("difference").innerText = currencyStr(difference)
 }
 
 function setupJointFilerToggles(form) {
