@@ -4,6 +4,8 @@
     {% include "head.njk" %}
   </head>
   <body class="{{ bodyClass }}">
-    {{ content | safe }}
+    <main>
+      {{ content | safe }}
+    </main>
   </body>
 </html>
