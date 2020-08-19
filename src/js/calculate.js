@@ -361,6 +361,8 @@ function calculateGraduatedTax({ income, rates, maxRate }) {
   )
 
   // Incomes over the maximum threshold are taxed at a single flat rate
+  // Based on Public Act 101-0008
+  // https://www.civicfed.org/iifs/blog/graduated-income-tax-proposal-part-ii-guide-illinois-plan
   const topRate = sortedRates.slice(-1)[0]
   if (income > topRate.lte) {
     return income * maxRate

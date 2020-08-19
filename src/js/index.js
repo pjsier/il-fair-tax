@@ -46,17 +46,41 @@ function setupJointFilerToggles(form) {
   updateFields(form.querySelector(`#statusJoint:checked`) === null)
 }
 
+// Set currency formatting after blur to avoid issues with label masking
+function currencyInputListeners(input) {
+  input.addEventListener("blur", () => {
+    if (input.value.trim()) {
+      input.value = currencyStr(+input.value)
+    }
+  })
+  input.addEventListener("focus", () => {
+    if (input.value.trim()) {
+      input.value = (+input.value.replace(/[^0-9.]/g, "")).toString()
+    }
+  })
+}
+
 function addInputListeners(form) {
   form.querySelectorAll("input").forEach((input) => {
-    input.addEventListener("blur", () => input.checkValidity())
+    input.addEventListener("blur", () => {
+      input.checkValidity()
+    })
     input.addEventListener("change", () => handleForm(form))
     input.addEventListener("input", () => handleForm(form))
+    if (input.dataset.type === "currency") {
+      currencyInputListeners(input)
+    }
   })
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form[name='calculator']")
   searchParamsToForm(form)
+  form.querySelectorAll("input[data-type='currency']").forEach((input) => {
+    if (input.value.trim()) {
+      input.value = currencyStr(+input.value)
+    }
+  })
   addInputListeners(form)
   setupJointFilerToggles(form)
   handleForm(form)

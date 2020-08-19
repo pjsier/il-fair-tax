@@ -42,7 +42,7 @@ export function formToObj(form) {
     if (form.elements[name].type === "checkbox") {
       value = !!value
     } else if (name !== "status") {
-      value = +value
+      value = +value.replace(/[^0-9.]/g, "")
     }
     formObj[name] = value
   })

@@ -47,13 +47,13 @@
         <label for="numDependents">
           # Dependents
         </label>
-        <input type="number" min="0" name="numDependents" id="numDependents" />
+        <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependents" id="numDependents" />
       </div>
       <div class="number-input">
         <label for="numDependentsUnder17">
           # Dependents under 17
         </label>
-        <input type="number" min="0" name="numDependentsUnder17" id="numDependentsUnder17" />
+        <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependentsUnder17" id="numDependentsUnder17" />
       </div>
     </div>
   </fieldset>
@@ -61,18 +61,18 @@
     <label for="propertyTaxes">
       2018 Property taxes
     </label>
-    <input type="number" name="propertyTaxes" id="propertyTaxes" min="0" />
+    <input type="text" inputmode="numeric" data-type="currency" name="propertyTaxes" id="propertyTaxes" min="0" />
   </div>
   <div class="number-input">
     <label for="k12Expenses">
       K-12 Expenses
     </label>
-    <input type="number" name="k12Expenses" id="k12Expenses" min="0" step="1" />
+    <input type="text" inputmode="numeric" data-type="currency" name="k12Expenses" id="k12Expenses" min="0" step="1" />
   </div>
   <div class="number-input">
     <label for="income">
       Income
     </label>
-    <input type="number" name="income" id="income" min="0" />
+    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" />
   </div>
 </form>
