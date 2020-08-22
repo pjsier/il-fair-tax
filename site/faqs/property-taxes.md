@@ -1,7 +1,7 @@
 ---
 tags: faqs
 title: Don't I pay enough in property taxes?
-order: 2
+order: 3
 ---
 
 Lorem ipsum

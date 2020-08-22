@@ -17,6 +17,8 @@ module.exports = function (eleventyConfig) {
       .filter(({ url }) => url && !url.includes("404") && !url.includes(".txt"))
   )
 
+  // TODO: target _blank, rel noreferrer on external links
+
   eleventyConfig.addPassthroughCopy({ "src/img": "img" })
 
   eleventyConfig.addPlugin(sitemap, {
