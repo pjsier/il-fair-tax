@@ -1,0 +1,21 @@
+---
+layout: base
+title: FAQs
+htmlprops: 'itemscope itemtype="https://schema.org/FAQPage"'
+---
+<h1>
+  FAQs
+</h1>
+
+{%- for faq in collections.faqs -%}
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="content margin-bottom-4">
+  <h2 itemprop="name" id="{{ faq.fileSlug }}">
+    {{ faq.data.title }}
+  </h2>
+  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <div itemprop="text">
+      {{ faq.templateContent | safe }}
+    </div>
+  </div>
+</div>
+{%- endfor -%}

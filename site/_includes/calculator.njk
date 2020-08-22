@@ -1,78 +1,99 @@
-<form name="calculator" method="GET" action="">
+<form class="calculator" name="calculator" method="GET" action="">
   <fieldset>
     <legend>
       Filing status
     </legend>
-    <div class="radio-input">
-      <input type="radio" name="status" id="statusSingle" value="single" checked />
-      <label for="statusSingle">
-        Single
-      </label>
-    </div>
-    <div class="radio-input">
-      <input type="radio" name="status" id="statusJoint" value="joint" />
-      <label for="statusJoint">
-        Joint
-      </label>
+    <div class="flex-row-center flex-1 flex-grow-1 flex-wrap">
+      <div class="radio-input flex-row-center justify-start flex-1 flex-grow-1 min-input-width">
+        <input type="radio" name="status" id="statusSingle" value="single" checked />
+        <label for="statusSingle" class="flex-grow-1">
+          Single, head of household, or widowed
+        </label>
+      </div>
+      <div class="radio-input flex-row-center justify-start flex-1 flex-grow-1 min-input-width">
+        <input type="radio" name="status" id="statusJoint" value="joint" />
+        <label for="statusJoint" class="flex-grow-1">
+          Married, filing jointly
+        </label>
+      </div>
     </div>
   </fieldset>
-  <label class="checkbox">
-    <input type="checkbox" name="older65" />
-    <span tabindex="-1">
-      Older 65?
-    </span>
-  </label>
-  <label class="checkbox hidden" data-status="joint">
-    <input type="checkbox" name="spouseOlder65" />
-    <span tabindex="-1">
-      Spouse older 65?
-    </span>
-  </label>
-  <label class="checkbox">
-    <input type="checkbox" name="legallyBlind" />
-    <span tabindex="-1">
-      Blind?
-    </span>
-  </label>
-  <label class="checkbox hidden" data-status="joint">
-    <input type="checkbox" name="spouseLegallyBlind" />
-    <span tabindex="-1">
-      Spouse blind?
-    </span>
-  </label>
-  <fieldset>
-    <legend>Dependents</legend>
-    <div class="input-row">
-      <div class="number-input">
+  <div class="number-input flex-column">
+    <label class="label-legend" for="income">
+      Income
+    </label>
+    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" />
+  </div>
+  <hr>
+  <fieldset class="flex-column">
+    <legend>
+      Your household
+    </legend>
+    <div class="margin-bottom-1">
+      <div class="flex-row-center flex-wrap">
+        <label class="checkbox flex-row-center flex-1 flex-grow-1 min-input-width">
+          <input type="checkbox" name="older65" />
+          <span tabindex="-1">
+            Are you 65 or older?
+          </span>
+        </label>
+        <label class="checkbox flex-row-center flex-1 flex-grow-1 min-input-width">
+          <input type="checkbox" name="legallyBlind" />
+          <span tabindex="-1">
+            Are you legally blind?
+          </span>
+        </label>
+      </div>
+      <div class="flex-row-center flex-wrap" data-status="joint">
+        <label class="checkbox hidden flex-row-center flex-1 flex-grow-1 min-input-width" data-status="joint">
+          <input type="checkbox" name="spouseOlder65" />
+          <span tabindex="-1">
+            Is your spouse 65 or older?
+          </span>
+        </label>
+        <label class="checkbox hidden flex-row-center flex-1 flex-grow-1 min-input-width" data-status="joint">
+          <input type="checkbox" name="spouseLegallyBlind" />
+          <span tabindex="-1">
+            Is your spouse blind?
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="flex-row-start justify-start flex-1 flex-grow-1 flex-wrap">
+      <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="numDependents">
-          # Dependents
+          Number of dependents
         </label>
         <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependents" id="numDependents" />
       </div>
-      <div class="number-input">
+      <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="numDependentsUnder17">
-          # Dependents under 17
+          Number of dependents under 17
         </label>
         <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependentsUnder17" id="numDependentsUnder17" />
       </div>
     </div>
   </fieldset>
-  <div class="number-input">
-    <label for="propertyTaxes">
-      2018 Property taxes
-    </label>
-    <input type="text" inputmode="numeric" data-type="currency" name="propertyTaxes" id="propertyTaxes" min="0" />
-  </div>
-  <div class="number-input">
-    <label for="k12Expenses">
-      K-12 Expenses
-    </label>
-    <input type="text" inputmode="numeric" data-type="currency" name="k12Expenses" id="k12Expenses" min="0" step="1" />
-  </div>
-  <div class="number-input">
-    <label for="income">
-      Income
-    </label>
-    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" />
-  </div>
+  <fieldset>
+    <legend>
+      Deductions
+    </legend>
+    <div class="flex-row-start justify-start flex-1 flex-grow-1 flex-wrap">
+      <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
+        <label for="propertyTaxes">
+          Most recent residential property taxes
+        </label>
+        <input type="text" inputmode="numeric" data-type="currency" name="propertyTaxes" id="propertyTaxes" min="0" />
+      </div>
+      <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
+        <label for="k12Expenses">
+          K-12 Expenses
+        </label>
+        <input type="text" inputmode="numeric" data-type="currency" name="k12Expenses" id="k12Expenses" min="0" step="1" />
+        <p class="help">
+          Ex: tuition payments, books, lab fees
+        </p>
+      </div>
+    </div>
+  </fieldset>
 </form>

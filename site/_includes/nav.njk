@@ -1,0 +1,14 @@
+<nav class="flex-row-center justify-center">
+  <div class="nav-contents flex-row-center justify-between flex-grow-1">
+    <div>
+      <a href="/">Home</a>
+    </div>
+    <ul class="flex-row-center">
+      {% for link in site.nav %}
+      <li>
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

@@ -50,5 +50,9 @@ export function formToObj(form) {
 }
 
 export function currencyStr(amount) {
-  return amount.toLocaleString("en-US", { style: "currency", currency: "USD" })
+  return amount.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: amount % 1 === 0 ? 0 : 2,
+  })
 }

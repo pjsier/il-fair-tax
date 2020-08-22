@@ -6,4 +6,4 @@
 
 - Styling
 - Social share metadata (i.e. share your status!)
-- FAQ page
+- Automatically generate metadata image assets

@@ -1,64 +1,306 @@
-html {
-  background-color: white;
+:root {
+  --blue: #0052af;
+  --white: #fff;
+  --gray: #ccc;
+  --light-gray: #f1f1f1;
+  --border: solid 1px var(--gray);
+  --serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --grid: 6px;
+  --grid-05: 3px;
+  --grid-2: 12px;
+  --grid-3: 18px;
+  --grid-4: 24px;
+  --grid-5: 30px;
+  --grid-6: 36px;
+  --font-size: 16px;
+  --nav-height: 60px;
+  --max-nav-width: 1200px;
+  --max-width: 720px;
+  --min-input-width: 300px;
 }
+
+html,
+body {
+  background-color: var(--white);
+  font-family: var(--serif);
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size);
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--sans-serif);
+  font-weight: bold;
+}
+
+h1 {
+  margin-bottom: var(--grid-3);
+}
+
+h2 {
+  margin-bottom: var(--grid-2);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active,
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+hr {
+  height: 0px;
+  border: 0.5px solid var(--gray);
+  margin: var(--grid-2) 0;
+}
+
+nav {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: var(--grid-2);
+  height: var(--nav-height);
+  font-family: var(--sans-serif);
+  font-weight: bold;
+}
+
+nav .nav-contents {
+  max-width: var(--max-nav-width);
+}
+
+nav a {
+  color: var(--white);
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: var(--grid-2);
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+main {
+  min-height: calc(100vh - var(--nav-height));
+  max-width: var(--max-width);
+  padding: var(--grid-2);
+  margin: auto;
+}
+
+footer {
+  background-color: var(--light-gray);
+  padding: var(--grid-2);
+  min-height: 120px;
+}
+
+/* FORMS */
 
 fieldset {
   display: flex;
 }
 
+legend,
+label {
+  font-weight: bold;
+}
+
+input {
+  background-color: var(--white);
+  border: var(--border);
+  border-radius: 2px;
+}
+
+input:hover {
+  border-color: var(--blue);
+}
+
+input:active,
+input:focus {
+  box-shadow: 0 0 1px 1px var(--blue);
+}
+
+input[type="text"] {
+  appearance: none;
+  min-height: var(--grid-6);
+  padding: var(--grid-05) var(--grid);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: var(--grid-5);
+  min-width: var(--grid-5);
+  height: var(--grid-5);
+  margin: 0;
+  border: var(--border);
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "\2714\fe0e";
+  font-size: var(--grid-4);
+  color: var(--blue);
+  border-width: 0;
+  text-align: center;
+}
+
+input[type="checkbox"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:hover {
+  z-index: 1;
+  outline: none;
+  cursor: pointer;
+}
+
+input[disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][disabled] {
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+legend,
+.label-legend,
+.number-input .label-legend {
+  font-size: 18px;
+  margin-bottom: var(--grid);
+}
+
+.number-input label {
+  margin-bottom: var(--grid-05);
+}
+
 fieldset,
 label.checkbox,
 .number-input {
-  margin-bottom: 12px;
-}
-
-label.checkbox {
-  display: block;
+  margin-bottom: var(--grid-2);
 }
 
 label.checkbox,
 input[type="radio"],
 .radio-input label {
   cursor: pointer;
+  font-weight: normal;
+}
+
+label.checkbox input {
+  margin-right: var(--grid);
 }
 
 .radio-input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin-right: 18px;
+  margin-right: var(--grid-3);
+  min-height: var(--grid-6);
 }
 
 .radio-input input {
-  margin-right: 6px;
+  margin-left: 0;
+  margin-right: var(--grid);
 }
 
-.input-row {
+@media screen and (min-width: 650px) {
+  fieldset .number-input {
+    margin: 0 var(--grid);
+  }
+  fieldset .number-input:first-of-type {
+    margin-left: 0;
+  }
+  fieldset .number-input:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.help {
+  font-size: 14px;
+  margin-top: var(--grid-05);
+  opacity: 0.6;
+}
+
+.content p:not(:last-child) {
+  margin-bottom: var(--grid-2);
+}
+
+/* UTILITY CLASSES */
+
+.hidden {
+  display: none !important;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-bottom-1 {
+  margin-bottom: var(--grid);
+}
+
+.margin-bottom-4 {
+  margin-bottom: var(--grid-4);
+}
+
+.flex-row-center {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
 }
 
-.input-row .number-input {
-  margin-bottom: 0;
+.flex-row-start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.flex-column {
   display: flex;
   flex-direction: column;
 }
 
-.input-row .number-input {
-  margin: 0 6px;
+.flex-1 {
+  flex: 1;
 }
 
-.input-row .number-input:first-child {
-  margin-left: 0;
+.flex-grow-1 {
+  flex-grow: 1;
 }
 
-.input-row .number-input:last-child {
-  margin-right: 0;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
-.hidden {
-  display: none !important;
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* TODO: Maybe just apply to all */
+.min-input-width {
+  min-width: var(--min-input-width);
 }

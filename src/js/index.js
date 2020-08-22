@@ -75,6 +75,7 @@ function addInputListeners(form) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form[name='calculator']")
+  if (!form) return
   searchParamsToForm(form)
   form.querySelectorAll("input[data-type='currency']").forEach((input) => {
     if (input.value.trim()) {
