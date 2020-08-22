@@ -99,7 +99,6 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.resolve("./site/_includes/webpack.html"),
       filename: path.resolve("./site/_includes/webpack.njk"),
-      hash: true,
       inject: false,
     }),
   ],

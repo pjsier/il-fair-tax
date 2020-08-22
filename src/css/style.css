@@ -54,6 +54,7 @@ h2 {
 }
 
 a {
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -91,7 +92,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-right: var(--grid-2);
+  margin-right: var(--grid-3);
 }
 
 nav ul li:last-child {

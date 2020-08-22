@@ -1,3 +1,6 @@
+const { baseurl } = require("./site/_data/site")
+const sitemap = require("@quasibit/eleventy-plugin-sitemap")
+
 module.exports = function (eleventyConfig) {
   // This allows Eleventy to watch for file changes during local development.
   eleventyConfig.setUseGitIgnore(false)
@@ -8,7 +11,19 @@ module.exports = function (eleventyConfig) {
       .sort(({ data: { order: a } }, { data: { order: b } }) => a - b)
   )
 
+  eleventyConfig.addCollection("sitemap", (collectionApi) =>
+    collectionApi
+      .getAll()
+      .filter(({ url }) => url && !url.includes("404") && !url.includes(".txt"))
+  )
+
   eleventyConfig.addPassthroughCopy({ "src/img": "img" })
+
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: baseurl,
+    },
+  })
 
   return {
     dir: {
