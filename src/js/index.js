@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   searchParamsToForm(form)
   form.querySelectorAll("input[data-type='currency']").forEach((input) => {
     if (input.value.trim()) {
-      input.value = currencyStr(+input.value)
+      input.value = currencyStr(+input.value.replace(/[^0-9.]/g, ""))
     }
   })
   addInputListeners(form)

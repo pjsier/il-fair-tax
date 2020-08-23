@@ -5,6 +5,7 @@
   --light-gray: #f1f1f1;
   --text-color: #2c2e35;
   --border: solid 1px var(--gray);
+  --box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
   --serif: "Merriweather", Georgia, "Times New Roman", serif;
   --sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -16,7 +17,7 @@
   --grid-4: 24px;
   --grid-5: 30px;
   --grid-6: 36px;
-  --font-size: 16px;
+  --font-size: 18px;
   --nav-height: 60px;
   --max-nav-width: 1200px;
   --max-width: 720px;
@@ -31,6 +32,7 @@ body {
   padding: 0;
   font-size: var(--font-size);
   color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,14 +47,15 @@ h5,
 h6 {
   font-family: var(--sans-serif);
   font-weight: 800;
+  line-height: 1.25;
 }
 
 h1 {
-  margin-bottom: var(--grid-3);
+  margin-bottom: var(--grid-5);
 }
 
 h2 {
-  margin-bottom: var(--grid-2);
+  margin-bottom: var(--grid-3);
 }
 
 a {
@@ -79,7 +82,7 @@ nav {
   height: var(--nav-height);
   font-family: var(--sans-serif);
   font-weight: bold;
-  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow);
 }
 
 nav .nav-contents {
@@ -105,7 +108,7 @@ nav ul li:last-child {
 main {
   min-height: calc(100vh - var(--nav-height));
   max-width: var(--max-width);
-  padding: var(--grid-2);
+  padding: var(--grid-4) var(--grid-2);
   margin: auto;
 }
 
@@ -188,7 +191,7 @@ input[type="radio"][disabled] {
 legend,
 .label-legend,
 .number-input .label-legend {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: var(--grid);
   margin-top: var(--grid-05);
 }
@@ -246,6 +249,19 @@ label.checkbox input {
   margin-bottom: var(--grid-2);
 }
 
+form.calculator {
+  border-radius: var(--grid-05);
+  box-shadow: var(--box-shadow);
+  padding: var(--grid-3);
+}
+
+@media screen and (max-width: 650px) {
+  form.calculator {
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
 /* UTILITY CLASSES */
 
 .hidden {
@@ -262,6 +278,10 @@ label.checkbox input {
 
 .margin-bottom-4 {
   margin-bottom: var(--grid-4);
+}
+
+.margin-bottom-6 {
+  margin-bottom: var(--grid-6);
 }
 
 .flex-row-center {

@@ -1,4 +1,4 @@
-<form class="calculator" name="calculator" method="GET" action="">
+<form class="calculator margin-bottom-4" name="calculator" method="GET" action="">
   <fieldset>
     <legend>
       Filing status
@@ -7,7 +7,7 @@
       <div class="radio-input flex-row-center justify-start flex-1 flex-grow-1 min-input-width">
         <input type="radio" name="status" id="statusSingle" value="single" checked />
         <label for="statusSingle" class="flex-grow-1">
-          Single, head of household, or widowed
+          Single, head of household
         </label>
       </div>
       <div class="radio-input flex-row-center justify-start flex-1 flex-grow-1 min-input-width">
@@ -22,7 +22,7 @@
     <label class="label-legend" for="income">
       Income
     </label>
-    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" />
+    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" placeholder="Enter your annual income" />
   </div>
   <fieldset class="flex-column">
     <legend>
@@ -63,13 +63,13 @@
         <label for="numDependents">
           Number of dependents
         </label>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependents" id="numDependents" />
+        <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependents" id="numDependents" value="0" />
       </div>
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="numDependentsUnder17">
           Number of dependents under 17
         </label>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependentsUnder17" id="numDependentsUnder17" />
+        <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependentsUnder17" id="numDependentsUnder17" value="0" />
       </div>
     </div>
   </fieldset>
@@ -80,15 +80,15 @@
     <div class="flex-row-start justify-start flex-1 flex-grow-1 flex-wrap">
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="propertyTaxes">
-          Most recent residential property taxes
+          Residential property taxes
         </label>
-        <input type="text" inputmode="numeric" data-type="currency" name="propertyTaxes" id="propertyTaxes" min="0" />
+        <input type="text" inputmode="numeric" data-type="currency" name="propertyTaxes" id="propertyTaxes" min="0" value="$0" />
       </div>
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="k12Expenses">
           K-12 Expenses
         </label>
-        <input type="text" inputmode="numeric" data-type="currency" name="k12Expenses" id="k12Expenses" min="0" step="1" />
+        <input type="text" inputmode="numeric" data-type="currency" name="k12Expenses" id="k12Expenses" min="0" step="1" value="$0" />
         <p class="help">
           Ex: tuition payments, books, lab fees
         </p>
