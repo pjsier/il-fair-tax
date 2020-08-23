@@ -1,15 +1,15 @@
 <meta charset="utf-8">
-<title>{{ title or site.title or site.name }}{% if url %} | {{ site.title }}{% endif %}</title>
-<meta name="description" content="{{ description or site.description }}">
+<title>{{ title or page.title or site.title }}{% if page.url != "/" %} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ description or page.description or site.description }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="{{ site.url }}/img/favicon.ico" />
 
-<meta property="og:title" content="{{ title or site.title }}" />
-<meta property="og:type" content="{{ type or site.type }}" />
-<meta property="og:url" content="{{ url or site.url }}" />
-<meta property="og:image" content="{{ image or site.image }}" />
-<meta property="og:site_name" content="{{ name or site.name }}" />
-<meta property="og:description" content="{{ description or site.description }}" />
+<meta property="og:title" content="{{ title or page.title or site.title }}" />
+<meta property="og:type" content="{{ site.type }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:image" content="{{ site.url }}{{ image or page.image or site.image }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:description" content="{{ description or page.description or site.description }}" />
 
 <script type="module">{% include "index.js" %}</script>
 {% include "webpack.njk" %}
