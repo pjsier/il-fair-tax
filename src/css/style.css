@@ -12,6 +12,7 @@
     "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --grid: 6px;
   --grid-05: 3px;
+  --grid-1-5: 9px;
   --grid-2: 12px;
   --grid-3: 18px;
   --grid-4: 24px;
@@ -274,6 +275,10 @@ form.calculator {
 
 .margin-bottom-1 {
   margin-bottom: var(--grid);
+}
+
+.margin-bottom-1-5 {
+  margin-bottom: var(--grid-1-5);
 }
 
 .margin-bottom-4,
