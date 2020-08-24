@@ -12,3 +12,4 @@
 - Polyfill smoothscroll?
 - Automatically generate metadata image assets, manifest.webmanifest
 - i18n
+- Use `details` and `summary` for FAQs?

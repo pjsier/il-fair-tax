@@ -240,6 +240,48 @@ label.checkbox input {
   }
 }
 
+.landing {
+  max-width: 100%;
+}
+/* SCROLLER */
+
+#scroll {
+  position: relative;
+}
+
+/* https://pudding.cool/process/introducing-scrollama/ */
+
+.scroll-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-graphic.fixed {
+  position: fixed;
+}
+
+.scroll-graphic.bottom {
+  bottom: 0;
+  top: auto;
+}
+
+.scroll-graphic .chart {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-steps {
+  padding: var(--grid-2);
+}
+
+/* CALCULATOR */
+
 .help {
   font-size: 14px;
   margin-top: var(--grid-05);

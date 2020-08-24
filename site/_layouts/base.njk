@@ -5,7 +5,7 @@
   </head>
   <body>
     {% include "nav.njk" %}
-    <main>
+    <main class="{{ mainClass }}">
       {{ content | safe }}
     </main>
     {% include "footer.njk" %}
