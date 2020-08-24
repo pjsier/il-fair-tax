@@ -267,7 +267,7 @@ function calculateEIC({ income, status, numDependentsUnder17 }) {
   // Technically, dependents under 18 count, but being more strict with 17 to avoid additional input
   const STATE_PERCENT_EIC = 0.18
 
-  const eligibleChildren = Math.max(3, numDependentsUnder17)
+  const eligibleChildren = Math.min(3, numDependentsUnder17)
 
   // https://www.taxpolicycenter.org/statistics/eitc-parameters
   const EIC_2018_LEVELS = [
