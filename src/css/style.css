@@ -1,5 +1,10 @@
+@import "reset.css";
+@import "fonts.css";
+
 :root {
   --blue: #0052af;
+  --teal: #09afb0;
+  --teal-light: rgba(9, 175, 176, 0.6);
   --white: #fff;
   --gray: #ccc;
   --light-gray: #f1f1f1;
@@ -243,6 +248,7 @@ label.checkbox input {
 .landing {
   max-width: 100%;
 }
+
 /* SCROLLER */
 
 #scroll {

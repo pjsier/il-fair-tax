@@ -1,7 +1,5 @@
 const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const TerserPlugin = require("terser-webpack-plugin")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 const config = {
@@ -25,7 +23,6 @@ const config = {
           minimize: true,
           minimizer: [
             new TerserPlugin({ cache: true, parallel: true, sourceMap: true }),
-            new OptimizeCSSAssetsPlugin({}),
           ],
         }
       : {},
@@ -58,19 +55,6 @@ const config = {
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              plugins: () => [require("autoprefixer")],
-            },
-          },
-        ],
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
@@ -90,12 +74,6 @@ const config = {
     tls: "empty",
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename:
-        process.env.NODE_ENV === "production"
-          ? "[name].[hash].css"
-          : "[name].css",
-    }),
     new HtmlWebpackPlugin({
       template: path.resolve("./site/_includes/webpack.html"),
       filename: path.resolve("./site/_includes/webpack.njk"),

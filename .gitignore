@@ -4,3 +4,4 @@ node_modules
 dist/
 site/_includes/webpack.njk
 site/_includes/*.js
+site/_includes/*.css

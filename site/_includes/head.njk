@@ -11,4 +11,12 @@
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ description or page.description or site.description }}" />
 
+{% set css %}
+  {% include "style.css" %}
+{% endset %}
+
+<style>
+  {{ css | safe }}
+</style>
+
 {% include "webpack.njk" %}
