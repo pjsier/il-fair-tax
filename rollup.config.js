@@ -8,7 +8,10 @@ export default [
       file: "site/_includes/index.js",
       format: "esm",
     },
-    plugins: [resolve(), terser()],
+    plugins: [
+      resolve(),
+      ...(process.env.NODE_ENV === "production" ? [terser()] : []),
+    ],
   },
   {
     input: "src/js/calculator.js",
@@ -16,6 +19,9 @@ export default [
       file: "site/_includes/calculator.js",
       format: "esm",
     },
-    plugins: [resolve(), terser()],
+    plugins: [
+      resolve(),
+      ...(process.env.NODE_ENV === "production" ? [terser()] : []),
+    ],
   },
 ]
