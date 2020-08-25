@@ -14,6 +14,7 @@ function handleForm(form) {
   const difference = fairTax - currentTax
 
   updateResults({
+    income: params.income,
     fairTaxAmount: fairTax,
     currentTaxAmount: currentTax,
     difference,
@@ -21,14 +22,46 @@ function handleForm(form) {
   formObjToSearchParams(params)
 }
 
-function updateResults({ fairTaxAmount, currentTaxAmount, difference }) {
+function updateResults({
+  income,
+  fairTaxAmount,
+  currentTaxAmount,
+  difference,
+}) {
+  const root = document.documentElement
+  root.style.setProperty("--results-display", income > 0 ? "block" : "none")
+
+  const changeDescription = document.getElementById("change-description")
+  if (difference > 0) {
+    changeDescription.innerText = `Your taxes will go up ${currencyStr(
+      difference
+    )}`
+  } else if (difference < 0) {
+    changeDescription.innerText = `Your taxes will go down ${currencyStr(
+      Math.abs(Math.round(difference))
+    )}`
+  } else {
+    changeDescription.innerText = `Your taxes will stay the same`
+  }
+
   document.getElementById("fairTaxAmount").innerText = currencyStr(
     fairTaxAmount
   )
   document.getElementById("currentTaxAmount").innerText = currencyStr(
     currentTaxAmount
   )
-  document.getElementById("difference").innerText = currencyStr(difference)
+
+  const fairTaxPct = (fairTaxAmount / income) * 100
+  const currentTaxPct = (currentTaxAmount / income) * 100
+
+  root.style.setProperty(
+    "--current-tax-pct",
+    `${Math.max(0, currentTaxPct).toFixed(2)}%`
+  )
+  root.style.setProperty(
+    "--fair-tax-pct",
+    `${Math.max(0, fairTaxPct).toFixed(2)}%`
+  )
 }
 
 function setupJointFilerToggles(form) {

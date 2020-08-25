@@ -24,6 +24,8 @@
   --grid-5: 30px;
   --grid-6: 36px;
   --grid-7: 42px;
+  --grid-12: 72px;
+  --grid-20: 120px;
   --font-size: 18px;
   --nav-height: 60px;
   --max-nav-width: 1200px;
@@ -125,8 +127,6 @@ footer {
   min-height: 120px;
 }
 
-/* FORMS */
-
 .landing {
   max-width: 100%;
 }
@@ -178,6 +178,18 @@ footer {
   display: none !important;
 }
 
+.serif {
+  font-family: var(--serif);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.padding-1 {
+  padding: var(--grid);
+}
+
 .margin-0 {
   margin: 0;
 }
@@ -201,6 +213,14 @@ ul.margin-bottom-4 {
 
 .margin-bottom-6 {
   margin-bottom: var(--grid-6);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .flex-row-center {
@@ -232,6 +252,10 @@ ul.margin-bottom-4 {
   flex-wrap: wrap;
 }
 
+.align-center {
+  align-items: center;
+}
+
 .justify-start {
   justify-content: flex-start;
 }
@@ -242,6 +266,22 @@ ul.margin-bottom-4 {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.height-6 {
+  height: var(--grid-6);
+}
+
+.min-height-6 {
+  min-height: var(--grid-6);
+}
+
+.min-height-12 {
+  min-height: var(--grid-12);
+}
+
+.min-width-20 {
+  min-width: var(--grid-20);
 }
 
 /* TODO: Maybe just apply to all */

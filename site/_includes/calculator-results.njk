@@ -1,17 +1,34 @@
 <div id="calculator-results">
-  <p>
-    <span>Fair Tax:</span>
-    <span id="fairTaxAmount">
-    </span>
-  </p>
-  <p>
-    <span> Current Tax:</span>
-    <span id="currentTaxAmount">
-    </span>
-  </p>
-  <p>
-    <span>Difference:</span>
-    <span id="difference">
-    </span>
-  </p>
+  <h3 id="change-description" class="serif text-center margin-bottom-4"></h3>
+  <div class="flex-row-center">
+    <div class="flex-column flex-grow-1 align-center justify-center">
+      <p class="bold" id="currentTaxAmount"></p>
+      <p>Current Taxes</p>
+    </div>
+    <div class="flex-column flex-grow-1 align-center justify-center">
+      <p class="bold" id="fairTaxAmount"></p>
+      <p>Fair Tax</p>
+    </div>
+  </div>
+  <h3 class="income-chart-heading margin-top-6 margin-bottom-1-5">Your taxes</h3>
+  <div class="income-chart median margin-bottom-4 flex-row-center">
+    <div class="flex-row-center min-height-6">
+      <div class="chart-label min-width-20 text-right padding-1">Current Tax</div>
+      <div id="current-tax-bar" class="flex-grow-1">
+        <div class="current-tax-width income-chart-bar height-6"></div>
+      </div>
+    </div>
+    <div class="flex-row-center min-height-6">
+      <div class="chart-label min-width-20 text-right padding-1">Fair Tax</div>
+      <div id="fair-tax-bar" class="flex-grow-1">
+        <div class="fair-tax-width income-chart-bar height-6"></div>
+      </div>
+    </div>
+    <div class="flex-row-center min-height-6">
+      <div class="chart-label min-width-20 text-right padding-1">Income</div>
+      <div class="flex-grow-1">
+        <div class="income-width income-chart-bar height-6"></div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,3 +1,10 @@
+:root {
+  --results-display: none;
+  --current-tax-pct: 0%;
+  --fair-tax-pct: 0%;
+  --income-pct: 100%;
+}
+
 fieldset {
   display: flex;
 }
@@ -91,6 +98,10 @@ input[type="radio"],
   font-weight: normal;
 }
 
+label.checkbox:hover input {
+  border-color: var(--blue);
+}
+
 label.checkbox input {
   margin-right: var(--grid);
 }
@@ -117,47 +128,39 @@ label.checkbox input {
   }
 }
 
+#calculator-results {
+  display: var(--results-display);
+}
+
 .income-chart {
+  display: var(--results-display);
   position: relative;
   width: 100%;
-  height: var(--grid-6);
 }
 
-.income-chart .total,
-.income-chart .fair-tax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  border-radius: 2px;
+.income-chart-heading {
+  display: var(--results-display);
 }
 
-.income-chart .total {
-  right: 0;
-  background-color: var(--teal-light);
-}
-
-.income-chart .fair-tax {
-  width: 0%;
-  transition: all 0.5s ease-in-out;
+.income-chart-bar {
   background-color: var(--teal);
-}
-
-.income-chart .current-tax {
-  position: absolute;
-  width: 1px;
-  height: var(--grid-7);
-  bottom: 0;
-  background-color: var(--text-color);
+  border-radius: 2px;
   transition: all 0.5s ease-in-out;
 }
 
-#current-tax-label {
-  position: absolute;
-  bottom: calc(100% + var(--grid-1-5));
-  font-size: 14px;
-  transform: translateX(-50%);
-  /* right: 0; */
+.current-tax-width {
+  width: var(--current-tax-pct);
+  max-width: var(--current-tax-pct);
+}
+
+.fair-tax-width {
+  width: var(--fair-tax-pct);
+  max-width: var(--fair-tax-pct);
+}
+
+.income-width {
+  width: var(--income-pct);
+  min-width: var(--income-pct);
 }
 
 .help {
