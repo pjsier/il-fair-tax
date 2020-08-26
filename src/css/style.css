@@ -1,5 +1,4 @@
 @import "reset.css";
-@import "fonts.css";
 
 :root {
   --blue: #0052af;
@@ -11,10 +10,9 @@
   --text-color: #2c2e35;
   --border: solid 1px var(--gray);
   --box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  --serif: "Merriweather", Georgia, "Times New Roman", serif;
-  --sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, "Segoe UI",
+  --sans-serif: BlinkMacSystemFont, -apple-system, "Helvetica Neue", "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    "Helvetica", "Arial", sans-serif;
   --grid: 6px;
   --grid-05: 3px;
   --grid-1-5: 9px;
@@ -36,7 +34,7 @@
 html,
 body {
   background-color: var(--white);
-  font-family: var(--serif);
+  font-family: var(--sans-serif);
   margin: 0;
   padding: 0;
   font-size: var(--font-size);
@@ -54,7 +52,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--sans-serif);
   font-weight: 800;
   line-height: 1.25;
 }
@@ -89,7 +86,6 @@ nav {
   color: var(--white);
   padding: var(--grid-2);
   height: var(--nav-height);
-  font-family: var(--sans-serif);
   font-weight: bold;
   box-shadow: var(--box-shadow);
 }
@@ -176,10 +172,6 @@ footer {
 
 .hidden {
   display: none !important;
-}
-
-.serif {
-  font-family: var(--serif);
 }
 
 .text-center {
