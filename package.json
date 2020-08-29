@@ -7,7 +7,6 @@
     "format": "prettier --write **/*.{js,css} !dist",
     "start": "NODE_ENV=development run-p -l start:*",
     "start:eleventy": "eleventy --serve",
-    "start:webpack": "webpack --config webpack.config.js --progress --color --watch",
     "start:rollup": "rollup --config rollup.config.js -w",
     "start:postcss": "postcss ./src/css -d ./site/_includes -w",
     "build": "NODE_ENV=production run-s -l build:*",
