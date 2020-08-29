@@ -1,13 +1,22 @@
 <nav class="flex-row-center justify-center">
   <div class="nav-contents flex-row-center justify-between flex-grow-1">
     <div>
-      <a href="/">Home</a>
+      <a href="/{{ locale }}/">{{ home }}</a>
     </div>
     <ul class="flex-row-center">
-      {% for link in site.nav %}
+      {% for link in nav %}
       <li>
         <a href="{{ link.url }}">{{ link.label }}</a>
       </li>
+      {% endfor %}
+      {% for language in site.languages %}
+        {% if language.value != locale %}
+        <li>
+          <a href="/{{ language.value }}/{{ (page.url or url) | baseUrl }}">
+            {{ language.label }}
+          </a>
+        </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>

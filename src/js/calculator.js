@@ -32,16 +32,25 @@ function updateResults({
   root.style.setProperty("--results-display", income > 0 ? "block" : "none")
 
   const changeDescription = document.getElementById("change-description")
+  // Update description text with current amount
+  document
+    .querySelectorAll(`[data-template="tax-change-amount"]`)
+    .forEach((el) => {
+      el.innerText = currencyStr(Math.abs(Math.round(difference)))
+    })
+
   if (difference > 0) {
-    changeDescription.innerText = `Your taxes will go up ${currencyStr(
-      difference
-    )}`
+    changeDescription.innerText = document.getElementById(
+      "tax-change-up"
+    ).innerText
   } else if (difference < 0) {
-    changeDescription.innerText = `Your taxes will go down ${currencyStr(
-      Math.abs(Math.round(difference))
-    )}`
+    changeDescription.innerText = document.getElementById(
+      "tax-change-down"
+    ).innerText
   } else {
-    changeDescription.innerText = `Your taxes will stay the same`
+    changeDescription.innerText = document.getElementById(
+      "tax-change-same"
+    ).innerText
   }
 
   document.getElementById("fairTaxAmount").innerText = currencyStr(

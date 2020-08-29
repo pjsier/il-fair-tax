@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>{{ title or page.title or site.title }}{% if page.url != "/" %} | {{ site.title }}{% endif %}</title>
+<title>{{ title or page.title or site.title }}{% if page.url != "/" %} | {{ siteTitle or site.title }}{% endif %}</title>
 <meta name="description" content="{{ description or page.description or site.description }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="{{ site.url }}/img/favicon.ico" />
@@ -10,16 +10,3 @@
 <meta property="og:image" content="{{ site.url }}{{ image or page.image or site.image }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ description or page.description or site.description }}" />
-
-{% set css %}
-  {% include "style.css" %}
-  {% if style %}
-    {% include style %}
-  {% endif %}
-{% endset %}
-
-<style>
-  {{ css | safe }}
-</style>
-
-{% include "webpack.njk" %}

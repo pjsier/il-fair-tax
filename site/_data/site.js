@@ -20,7 +20,6 @@ const baseurl =
     : "http://localhost:8080"
 
 module.exports = {
-  lang: "en",
   name: "IL Fair Tax",
   title: "IL Fair Tax",
   type: "website",
@@ -28,8 +27,13 @@ module.exports = {
   url: baseurl,
   description: "IL Fair Tax",
   environment,
-  nav: [
-    { url: "/calculator/", label: "Calculator" },
-    { url: "/faqs/", label: "FAQs" },
+  lang: "en",
+  languages: [
+    {
+      value: "en",
+      label: "English",
+      default: true,
+    },
+    { value: "es", label: "Español" },
   ],
 }

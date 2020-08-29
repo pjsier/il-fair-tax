@@ -1,0 +1,12 @@
+{% set css %}
+  {% include "style.css" %}
+  {% if style %}
+    {% include style %}
+  {% endif %}
+{% endset %}
+
+<style>
+  {{ css | safe }}
+</style>
+
+{% include "webpack.njk" %}

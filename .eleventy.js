@@ -20,6 +20,10 @@ module.exports = function (eleventyConfig) {
   // This allows Eleventy to watch for file changes during local development.
   eleventyConfig.setUseGitIgnore(false)
 
+  eleventyConfig.addFilter("baseUrl", (value) =>
+    value.split("/").slice(2).join("")
+  )
+
   eleventyConfig.addCollection("faqs", (collectionApi) =>
     collectionApi
       .getFilteredByTag("faqs")
@@ -29,7 +33,25 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("sitemap", (collectionApi) =>
     collectionApi
       .getAll()
-      .filter(({ url }) => url && !url.includes("404") && !url.includes(".txt"))
+      .filter(({ url }) => url)
+      .map(({ url, date, data }, index, all) => ({
+        url,
+        date,
+        data: {
+          ...data,
+          sitemap: {
+            ...data.sitemap,
+            links: all
+              .filter(
+                ({ url: pageUrl, data: { locale: pageLocale } }) =>
+                  pageUrl.replace(`/${pageLocale}`, ``) ===
+                    url.replace(`/${data.locale}`, ``) && pageUrl !== url
+              )
+              .map(({ url, data: { locale: lang } }) => ({ url, lang })),
+          },
+        },
+      }))
+      .filter(({ data: { locale, site } }) => locale === site.lang)
   )
 
   eleventyConfig.addPassthroughCopy({

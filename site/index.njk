@@ -1,25 +1,8 @@
 ---
-layout: base
-title: Vote Yes for a Fair Tax
-mainClass: "landing"
+layout: redirect
+url: /en/
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "{{ title }}"
+  description: "{{ description }}"
 ---
-<div class="banner">
-  <h1>Vote yes for a Fair Tax</h1>
-</div>
-<section id="scroll">
-  <div class="scroll-graphic">
-    <div class="chart"></div>
-  </div>
-  <div class="scroll-steps">
-    <div class="step what-it-is">
-    </div>
-    <div class="step why-we-need-it">
-    </div>
-    <div class="step common-misconceptions">
-    </div>
-  </div>
-</section>
-<div class="">
-</div>
-
-<script type="module">{% include "index.js" %}</script>

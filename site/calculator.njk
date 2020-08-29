@@ -1,18 +1,7 @@
 ---
-layout: base
-title: Fair Tax Calculator
-style: calculator.css
+layout: redirect
+url: /en/calculator/
+eleventyExcludeFromCollections: true
+title: Fair Tax calculator
+description: "Fair tax FAQs"
 ---
-<h1>Fair Tax Calculator</h1>
-
-<div class="content margin-bottom-4">
-  <p>
-    Fill out the details below to see an estimate of how much you would pay with a Fair Tax. We don't store any of this information.
-  </p>
-</div>
-
-{% include "calculator.njk" %}
-
-{% include "calculator-results.njk" %}
-
-<script type="module">{% include "calculator.js" %}</script>
