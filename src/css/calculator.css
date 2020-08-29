@@ -17,7 +17,6 @@ label {
 input {
   background-color: var(--white);
   border: var(--border);
-  border-radius: 2px;
 }
 
 input:hover {
@@ -42,7 +41,6 @@ input[type="checkbox"] {
   height: var(--grid-5);
   margin: 0;
   border: var(--border);
-  border-radius: 2px;
   position: relative;
   display: flex;
   align-items: center;
@@ -144,7 +142,6 @@ label.checkbox input {
 
 .income-chart-bar {
   background-color: var(--teal);
-  border-radius: 2px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -170,7 +167,6 @@ label.checkbox input {
 }
 
 form.calculator {
-  border-radius: var(--grid-05);
   box-shadow: var(--box-shadow);
   padding: var(--grid-3);
 }
