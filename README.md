@@ -6,9 +6,5 @@
 
 - Styling
 - Form error messages
-- Social share metadata (i.e. share your status!)
-  - Potentially use window.location to differentiate content without reload
-- Link icon for each header in FAQ, unique link
+- Social share metadata
 - Automatically generate metadata image assets, manifest.webmanifest
-- i18n
-- Use `details` and `summary` for FAQs?
