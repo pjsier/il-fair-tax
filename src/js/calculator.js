@@ -54,6 +54,13 @@ function updateResults({
   const fairTaxPct = (fairTaxAmount / income) * 100
   const currentTaxPct = (currentTaxAmount / income) * 100
 
+  // Set form props so that IE 11 ponyfill can pick up values
+  window.formProps = {
+    income,
+    currentTaxPct,
+    fairTaxPct,
+  }
+
   root.style.setProperty(
     "--current-tax-pct",
     `${Math.max(0, currentTaxPct).toFixed(2)}%`
