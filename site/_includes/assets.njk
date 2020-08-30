@@ -5,8 +5,10 @@
   {% endif %}
 {% endset %}
 
-<style>
+<style type="text/css">
   {{ css | safe }}
 </style>
 
-{% include "webpack.njk" %}
+{% if site.environment != "development" %}
+  {% include "webpack.njk" %}
+{% endif %}

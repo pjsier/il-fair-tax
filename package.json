@@ -7,7 +7,6 @@
     "format": "prettier --write **/*.{js,css} !dist",
     "start": "NODE_ENV=development run-p -l start:*",
     "start:eleventy": "eleventy --serve",
-    "start:webpack": "webpack --config webpack.config.js --progress --color --watch",
     "start:rollup": "rollup --config rollup.config.js -w",
     "start:postcss": "postcss ./src/css -d ./site/_includes -w",
     "build": "NODE_ENV=production run-s -l build:*",
@@ -59,6 +58,10 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
+  "dependencies": {
+    "css-vars-ponyfill": "^2.3.2",
+    "formdata-polyfill": "^3.0.20"
+  },
   "eslintConfig": {
     "extends": [
       "eslint:recommended",
@@ -90,8 +93,5 @@
   },
   "mocha": {
     "exclude": "test/generate-test-data.js"
-  },
-  "dependencies": {
-    "ie11-custom-properties": "^4.1.0"
   }
 }

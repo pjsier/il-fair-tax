@@ -9,6 +9,14 @@ fieldset {
   display: flex;
 }
 
+/* Hack for IE 11 fieldset styles */
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  fieldset {
+    display: block !important;
+  }
+}
+
 legend,
 label {
   font-weight: bold;

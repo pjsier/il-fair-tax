@@ -29,8 +29,12 @@ export function formToObj(form) {
   const formNames = [
     ...new Set(
       Object.values(form.elements)
-        .map((input) =>
-          (input instanceof NodeList ? input[0] : input).getAttribute("name")
+        .map(
+          (input) =>
+            (input instanceof NodeList || input instanceof HTMLCollection
+              ? input[0]
+              : input
+            ).name
         )
         .filter((name) => !!name)
     ),
