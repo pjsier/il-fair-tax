@@ -171,13 +171,13 @@ label.checkbox input {
 }
 
 form.calculator {
-  box-shadow: var(--box-shadow);
+  border: solid var(--grid-05) var(--gray);
   padding: var(--grid-3);
 }
 
 @media screen and (max-width: 650px) {
   form.calculator {
-    box-shadow: none;
+    border-width: 0;
     padding: 0;
   }
 }

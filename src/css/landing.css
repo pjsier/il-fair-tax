@@ -72,10 +72,6 @@ main {
   border: solid var(--grid-05) var(--text-color);
 }
 
-.bg-light-gray {
-  background-color: var(--light-gray);
-}
-
 .bg-orange {
   background-color: var(--orange);
 }
@@ -86,4 +82,22 @@ main {
 
 .bg-teal-lighter {
   background-color: var(--teal-lighter);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+#il-svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  transform: translateY(-50%);
+  height: calc(var(--grid) * 72);
+}
+
+#il-svg path {
+  fill: var(--blue);
+  opacity: 0.2;
 }

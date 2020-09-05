@@ -10,7 +10,7 @@ eleventyComputed:
   title: "{{ t.homeTitle }}"
 style: landing.css
 ---
-<section class="min-height-60 flex-column justify-center padding-2 padding-top-bottom-4 bg-light-gray">
+<section class="min-height-80 flex-column justify-center padding-2 padding-top-bottom-4 relative">
   <div class="flex-row-center justify-center">
     <div class="max-width flex-grow-1 relative flex-row-center justify-start">
       <div class="relative flex-row-center flex-wrap">
@@ -25,6 +25,7 @@ style: landing.css
           {% endfor %}
         </div>
       </div>
+      {% include "illinois.svg" %}
     </div>
   </div>
 </section>
@@ -37,9 +38,12 @@ style: landing.css
 </section>
 
 <section class="padding-2 padding-top-bottom-4 flex-row-center justify-center">
-  <div class="max-width flex-grow-1">
-    <h2>About the Fair Tax</h2>
-    
+  <div class="max-width flex-grow-1 content">
+    {% for section in collections.landing %}
+      {% if section.data.locale == t.locale and section.fileSlug == "about-section" %}
+        {{ section.templateContent | safe }}
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 

@@ -46,6 +46,10 @@ module.exports = function (eleventyConfig) {
       .sort(({ data: { order: a } }, { data: { order: b } }) => a - b)
   )
 
+  eleventyConfig.addCollection("landing", (collectionApi) =>
+    collectionApi.getFilteredByTag("landing")
+  )
+
   eleventyConfig.addCollection("redirects", (collectionApi) =>
     collectionApi.getFilteredByTag("redirect")
   )

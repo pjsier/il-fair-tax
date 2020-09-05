@@ -27,7 +27,7 @@
   --grid-7: 42px;
   --grid-12: 72px;
   --grid-20: 120px;
-  --grid-60: 360px;
+  --grid-80: 480px;
   --font-size: 18px;
   --font-size-1-5: 26px;
   --font-size-2: 36px;
@@ -339,8 +339,8 @@ ul.margin-bottom-4 {
   min-height: var(--grid-12);
 }
 
-.min-height-60 {
-  min-height: var(--grid-60);
+.min-height-80 {
+  min-height: var(--grid-80);
 }
 
 .max-width {
