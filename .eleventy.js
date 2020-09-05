@@ -33,9 +33,6 @@ module.exports = function (eleventyConfig) {
     return props.url
   })
 
-  // This allows Eleventy to watch for file changes during local development.
-  eleventyConfig.setUseGitIgnore(false)
-
   eleventyConfig.addFilter("baseUrl", (value) =>
     value.split("/").slice(2).join("")
   )

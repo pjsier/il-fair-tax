@@ -17,11 +17,6 @@ fieldset {
   }
 }
 
-legend,
-label {
-  font-weight: bold;
-}
-
 input {
   background-color: var(--white);
   border: var(--border);
@@ -83,6 +78,7 @@ legend,
 .label-legend,
 .number-input .label-legend {
   font-size: 20px;
+  font-weight: bold;
   margin-bottom: var(--grid);
   margin-top: var(--grid-05);
 }

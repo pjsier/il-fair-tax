@@ -31,6 +31,7 @@
   "faqsQuestions": "Questions",
   "nav": [
     { "url": "/en/calculator/", "label": "Calculator" },
-    { "url": "/en/faqs/", "label": "FAQs" }
+    { "url": "/en/faqs/", "label": "FAQs" },
+    { "url": "https://www.yesforfairtax.org/join-us/", "label": "Get Involved" }
   ]
 }
