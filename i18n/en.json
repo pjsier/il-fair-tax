@@ -46,5 +46,6 @@
   "nav": [
     { "url": "/en/calculator/", "label": "Calculator" },
     { "url": "/en/faqs/", "label": "FAQs" }
-  ]
+  ],
+  "createdBy": "Created by volunteers"
 }

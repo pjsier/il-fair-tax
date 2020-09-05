@@ -1,5 +1,10 @@
 <footer class="flex-row-center justify-center">
-  <div class="max-width flex-grow-1">
+  <div class="max-content-width flex-grow-1 flex-row-center justify-between flex-wrap">
+    <div>
+      <p>
+        {{ t.createdBy }}
+      </p>
+    </div>
     <ul>
       {% for language in site.languages %}
         {% if language.value != t.locale %}
