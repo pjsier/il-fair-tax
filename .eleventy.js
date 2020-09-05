@@ -18,6 +18,9 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.setLibrary("md", markdownLib)
 
+  eleventyConfig.addWatchTarget("./src/css")
+  eleventyConfig.addWatchTarget("./src/js")
+
   eleventyConfig.addNunjucksAsyncShortcode("resizeImage", async function (
     src,
     sizes,
