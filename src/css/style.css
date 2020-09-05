@@ -4,6 +4,8 @@
   --blue: #0052af;
   --teal: #09afb0;
   --teal-light: rgba(9, 175, 176, 0.6);
+  --teal-lighter: rgba(9, 175, 176, 0.4);
+  --orange: #ffead2;
   --white: #fff;
   --gray: #ccc;
   --light-gray: #f1f1f1;
@@ -17,6 +19,7 @@
   --grid-05: 3px;
   --grid-1-5: 9px;
   --grid-2: 12px;
+  --grid-2-5: 15px;
   --grid-3: 18px;
   --grid-4: 24px;
   --grid-5: 30px;
@@ -24,10 +27,16 @@
   --grid-7: 42px;
   --grid-12: 72px;
   --grid-20: 120px;
+  --grid-60: 360px;
   --font-size: 18px;
+  --font-size-1-5: 26px;
+  --font-size-2: 36px;
+  --font-size-2-5: 45px;
+  --font-size-3: 54px;
   --nav-height: 60px;
   --max-nav-width: 1200px;
-  --max-width: 720px;
+  --max-width: 1200px;
+  --max-content-width: 720px;
   --min-input-width: 300px;
 }
 
@@ -57,10 +66,12 @@ h6 {
 }
 
 h1 {
+  font-size: var(--font-size-2);
   margin-bottom: var(--grid-5);
 }
 
 h2 {
+  font-size: var(--font-size-1-5);
   margin-bottom: var(--grid-3);
 }
 
@@ -98,8 +109,13 @@ nav a {
   color: var(--white);
 }
 
-nav ul {
+nav ul,
+footer ul {
   list-style: none;
+}
+
+footer ul {
+  padding-left: 0;
 }
 
 nav ul li {
@@ -112,7 +128,7 @@ nav ul li:last-child {
 
 main {
   min-height: calc(100vh - var(--nav-height));
-  max-width: var(--max-width);
+  max-width: var(--max-content-width);
   padding: var(--grid-4) var(--grid-2);
   margin: auto;
 }
@@ -123,64 +139,94 @@ footer {
   min-height: 120px;
 }
 
-.landing {
-  max-width: 100%;
-  padding: 0;
-}
-
-/* SCROLLER */
-
-#scroll {
-  position: relative;
-}
-
-/* https://pudding.cool/process/introducing-scrollama/ */
-
-.scroll-graphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: auto;
-  width: 100%;
-  transform: translate3d(0, 0, 0);
-}
-
-.scroll-graphic.fixed {
-  position: fixed;
-}
-
-.scroll-graphic.bottom {
-  bottom: 0;
-  top: auto;
-}
-
-.scroll-graphic .chart {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.scroll-steps {
-  padding: var(--grid-2);
-}
-
 .content p:not(:last-child) {
   margin-bottom: var(--grid-2);
 }
 
 /* UTILITY CLASSES */
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.visually-hidden-focusable:not(:focus) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.relative {
+  position: relative;
+}
+
 .hidden {
   display: none !important;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .text-center {
   text-align: center;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+.text-color-default {
+  color: var(--text-color);
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.text-color-active-blue:active,
+.text-color-active-blue:focus,
+.text-color-active-blue:hover {
+  color: var(--blue);
+}
+
+.border-radius-1 {
+  border-radius: var(--grid);
+}
+
 .padding-1 {
   padding: var(--grid);
+}
+
+.padding-2 {
+  padding: var(--grid-2);
+}
+
+.padding-top-3 {
+  padding-top: var(--grid-3);
+}
+
+.padding-bottom-3 {
+  padding-bottom: var(--grid-3);
+}
+
+.padding-left-right-4 {
+  padding-left: var(--grid-4);
+  padding-right: var(--grid-4);
+}
+
+.padding-top-bottom-4 {
+  padding-top: var(--grid-4);
+  padding-bottom: var(--grid-4);
 }
 
 .margin-0 {
@@ -214,6 +260,26 @@ ul.margin-bottom-4 {
 
 .text-right {
   text-align: right;
+}
+
+.font-size-1 {
+  font-size: var(--font-size);
+}
+
+.font-size-1-5 {
+  font-size: var(--font-size-1-5);
+}
+
+.font-size-2 {
+  font-size: var(--font-size-2);
+}
+
+.font-size-3 {
+  font-size: var(--font-size-3);
+}
+
+.line-height-1-25 {
+  line-height: 1.25;
 }
 
 .flex-row-center {
@@ -273,11 +339,49 @@ ul.margin-bottom-4 {
   min-height: var(--grid-12);
 }
 
+.min-height-60 {
+  min-height: var(--grid-60);
+}
+
+.max-width {
+  max-width: var(--max-width);
+}
+
+.max-content-width {
+  max-width: var(--max-content-width);
+}
+
 .min-width-20 {
   min-width: var(--grid-20);
 }
 
-/* TODO: Maybe just apply to all */
 .min-input-width {
   min-width: var(--min-input-width);
+}
+
+@media screen and (min-width: 750px) {
+  .margin-left-2-5-desktop {
+    margin-left: var(--grid-2-5);
+  }
+  .margin-left-4-desktop {
+    margin-left: var(--grid-4);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .flex-wrap-mobile {
+    flex-wrap: wrap;
+  }
+  .margin-bottom-4-mobile {
+    margin-bottom: var(--grid-4);
+  }
+  .justify-center-mobile {
+    justify-content: center;
+  }
+  .font-size-2-5-mobile {
+    font-size: var(--font-size-2-5);
+  }
+  .min-width-100-mobile {
+    min-width: 100%;
+  }
 }

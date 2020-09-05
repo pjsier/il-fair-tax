@@ -2,8 +2,21 @@
   "locale": "en",
   "home": "Home",
   "homeTitle": "Vote yes for Fair Tax",
+  "voteYesFor": "Vote yes for",
+  "voteYesForCategories": [
+    "Fair Tax",
+    "schools",
+    "health care",
+    "infrastructure",
+    "jobs"
+  ],
+  "faqCta": "Have questions about how this will work? Check out our FAQs for answers.",
+  "fairTaxFAQs": "Fair Tax FAQs",
+  "getInvolved": "Get involved",
+  "getInvolvedUrl": "https://www.yesforfairtax.org/join-us/",
   "calculatorTitle": "Fair Tax Calculator",
-  "calculatorDescription": "Fill out the details below to see an estimate of how much you would pay with a Fair Tax. We don't store any of this information.",
+  "calculatorDescription": "Find out for yourself how the Fair Tax would affect you and your family",
+  "calculatorPageDescription": "Fill out the details below to see an estimate of how much you would pay with a Fair Tax. We don't store any of this information.",
   "filingStatus": "Filing status",
   "statusSingle": "Single, head of household",
   "statusJoint": "Married, filing jointly",
@@ -31,7 +44,6 @@
   "faqsQuestions": "Questions",
   "nav": [
     { "url": "/en/calculator/", "label": "Calculator" },
-    { "url": "/en/faqs/", "label": "FAQs" },
-    { "url": "https://www.yesforfairtax.org/join-us/", "label": "Get Involved" }
+    { "url": "/en/faqs/", "label": "FAQs" }
   ]
 }

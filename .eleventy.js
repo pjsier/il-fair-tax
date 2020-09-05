@@ -18,8 +18,8 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.setLibrary("md", markdownLib)
 
-  eleventyConfig.addWatchTarget("./src/css")
-  eleventyConfig.addWatchTarget("./src/js")
+  // This allows Eleventy to watch for file changes during local development.
+  eleventyConfig.setUseGitIgnore(false)
 
   eleventyConfig.addNunjucksAsyncShortcode("resizeImage", async function (
     src,

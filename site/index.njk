@@ -8,25 +8,61 @@ pagination:
 permalink: "{{ t.locale }}/"
 eleventyComputed:
   title: "{{ t.homeTitle }}"
-mainClass: "landing"
+style: landing.css
 ---
-<div class="banner">
-  <h1>{{ t.homeTitle }}</h1>
-</div>
-<section id="scroll">
-  <div class="scroll-graphic">
-    <div class="chart"></div>
-  </div>
-  <div class="scroll-steps">
-    <div class="step what-it-is">
-    </div>
-    <div class="step why-we-need-it">
-    </div>
-    <div class="step common-misconceptions">
+<section class="min-height-60 flex-column justify-center padding-2 padding-top-bottom-4 bg-light-gray">
+  <div class="flex-row-center justify-center">
+    <div class="max-width flex-grow-1 relative flex-row-center justify-start">
+      <div class="relative flex-row-center flex-wrap">
+        <div class="min-height-12">
+          <h1 class="margin-0 font-size-3 font-size-2-5-mobile line-height-1-25">
+            {{ t.voteYesFor }} <span class="visually-hidden">{%- for category in t.voteYesForCategories -%}{{ category }}{% if not loop.last %}, {% endif %}{%- endfor -%}</span>
+          </h1>
+        </div>
+        <div class="flex-grow-1 font-size-3 font-size-2-5-mobile bold line-height-1-25 margin-left-2-5-desktop min-height-12 min-width-100-mobile relative" aria-hidden="true">
+          {% for category in t.voteYesForCategories %}
+          <span class="rotate-text">{{ category }}</span>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<div class="">
-</div>
 
-<script type="module">{% include "index.js" %}</script>
+<section class="banner padding-2 padding-top-bottom-4 flex-row-center justify-center bg-teal-lighter">
+  <div class="max-width flex-grow-1">
+    <h2>{{ t.calculatorTitle }}</h2>
+    <a href="/{{ t.locale }}/calculator/">CALCULATOR</a>
+  </div>
+</section>
+
+<section class="padding-2 padding-top-bottom-4 flex-row-center justify-center">
+  <div class="max-width flex-grow-1">
+    <h2>About the Fair Tax</h2>
+    
+  </div>
+</section>
+
+<section class="banner padding-2 padding-top-bottom-4 flex-row-center justify-center bg-orange">
+  <div class="max-content-width flex-grow-1 flex-row-center flex-wrap-mobile justify-between justify-center-mobile">
+    <div class="bold margin-bottom-4-mobile">
+      <p>{{ t.faqCta }}</p>
+    </div>
+    <div class="text-center margin-left-4-desktop">
+      <a class="button button-outline padding-2 padding-left-right-4 font-size-1-5 inline-block nowrap border-radius-1" href="/{{ t.locale }}/faqs/">
+        {{ t.fairTaxFAQs }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="padding-2 padding-top-bottom-4 flex-row-center justify-center">
+  <div class="max-width flex-grow-1">
+    <h2>Join us</h2>
+    <div class="text-center">
+      <a class="button padding-2 padding-left-right-4 font-size-1-5 inline-block border-radius-1" href="{{ t.getInvolvedUrl }}" target="_blank" rel="noopener">
+        {{ t.getInvolved }}
+      </a>
+    </div>
+  </div>
+</section>
