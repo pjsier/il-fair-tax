@@ -1,45 +1,45 @@
 <form class="calculator margin-bottom-4" name="calculator" method="GET" action="">
   <fieldset>
     <legend>
-      {{ filingStatus }}
+      {{ t.filingStatus }}
     </legend>
     <div class="flex-row-center flex-1 flex-grow-1 flex-wrap">
       <div class="radio-input flex-row-center justify-start flex-1 flex-grow-1 min-input-width">
         <input type="radio" name="status" id="statusSingle" value="single" checked />
         <label for="statusSingle" class="flex-grow-1">
-          {{ statusSingle }}
+          {{ t.statusSingle }}
         </label>
       </div>
       <div class="radio-input flex-row-center justify-start flex-1 flex-grow-1 min-input-width">
         <input type="radio" name="status" id="statusJoint" value="joint" />
         <label for="statusJoint" class="flex-grow-1">
-          {{ statusJoint }}
+          {{ t.statusJoint }}
         </label>
       </div>
     </div>
   </fieldset>
   <div class="number-input flex-column">
     <label class="label-legend" for="income">
-      {{ income }}
+      {{ t.income }}
     </label>
-    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" placeholder="{{ incomePlaceholder }}" />
+    <input type="text" inputmode="numeric" data-type="currency" name="income" id="income" min="0" placeholder="{{ t.incomePlaceholder }}" />
   </div>
   <fieldset class="flex-column">
     <legend>
-      {{ householdLabel }}
+      {{ t.householdLabel }}
     </legend>
     <div class="margin-bottom-1">
       <div class="flex-row-center flex-wrap">
         <label class="checkbox flex-row-center flex-1 flex-grow-1 min-input-width">
           <input type="checkbox" name="older65" />
           <span tabindex="-1">
-            {{ older65 }}
+            {{ t.older65 }}
           </span>
         </label>
         <label class="checkbox flex-row-center flex-1 flex-grow-1 min-input-width">
           <input type="checkbox" name="legallyBlind" />
           <span tabindex="-1">
-            {{ legallyBlind }}
+            {{ t.legallyBlind }}
           </span>
         </label>
       </div>
@@ -47,13 +47,13 @@
         <label class="checkbox hidden flex-row-center flex-1 flex-grow-1 min-input-width" data-status="joint">
           <input type="checkbox" name="spouseOlder65" />
           <span tabindex="-1">
-            {{ spouseOlder65 }}
+            {{ t.spouseOlder65 }}
           </span>
         </label>
         <label class="checkbox hidden flex-row-center flex-1 flex-grow-1 min-input-width" data-status="joint">
           <input type="checkbox" name="spouseLegallyBlind" />
           <span tabindex="-1">
-            {{ spouseLegallyBlind }}
+            {{ t.spouseLegallyBlind }}
           </span>
         </label>
       </div>
@@ -61,13 +61,13 @@
     <div class="flex-row-start justify-start flex-1 flex-grow-1 flex-wrap">
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="numDependents">
-          {{ numDependents }}
+          {{ t.numDependents }}
         </label>
         <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependents" id="numDependents" value="0" />
       </div>
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="numDependentsUnder17">
-          {{ numDependentsUnder17 }}
+          {{ t.numDependentsUnder17 }}
         </label>
         <input type="text" inputmode="numeric" pattern="[0-9]*" min="0" name="numDependentsUnder17" id="numDependentsUnder17" value="0" />
       </div>
@@ -75,22 +75,22 @@
   </fieldset>
   <fieldset>
     <legend>
-      {{ deductions }}
+      {{ t.deductions }}
     </legend>
     <div class="flex-row-start justify-start flex-1 flex-grow-1 flex-wrap">
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="propertyTaxes">
-          {{ propertyTaxes }}
+          {{ t.propertyTaxes }}
         </label>
         <input type="text" inputmode="numeric" data-type="currency" name="propertyTaxes" id="propertyTaxes" min="0" value="$0" />
       </div>
       <div class="number-input flex-column flex-1 flex-grow-1 min-input-width">
         <label for="k12Expenses">
-          {{ k12Expenses }}
+          {{ t.k12Expenses }}
         </label>
         <input type="text" inputmode="numeric" data-type="currency" name="k12Expenses" id="k12Expenses" min="0" step="1" value="$0" />
         <p class="help">
-          {{ k12ExpensesHelp }}
+          {{ t.k12ExpensesHelp }}
         </p>
       </div>
     </div>

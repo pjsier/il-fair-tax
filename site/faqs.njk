@@ -1,7 +1,45 @@
 ---
-layout: redirect
-url: /en/faqs/
-eleventyExcludeFromCollections: true
-title: FAQs
-description: "Fair tax FAQs"
+layout: base
+tags: redirect
+pagination:
+  data: i18n
+  size: 1
+  alias: t
+permalink: "{{ t.locale }}/{{ page.fileSlug }}/"
+eleventyComputed:
+  title: "{{ t.faqsTitle }}"
+htmlprops: 'itemscope itemtype="https://schema.org/FAQPage"'
 ---
+<h1>
+  {{ t.faqsTitle }}
+</h1>
+
+<h2>
+  {{ t.faqsQuestions }}
+</h2>
+<ul class="margin-bottom-4">
+{%- for faq in collections.faqs -%}
+{% if faq.data.locale == t.locale %}
+  <li class="margin-bottom-1-5">
+    <a href="#{{ faq.fileSlug }}">
+      {{ faq.data.title }}
+    </a>
+  </li>
+{% endif %}
+{%- endfor -%}
+</ul>
+
+{%- for faq in collections.faqs -%}
+{% if faq.data.locale == t.locale %}
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="content margin-bottom-6">
+  <h2 itemprop="name" id="{{ faq.fileSlug }}">
+    {{ faq.data.title }}
+  </h2>
+  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+    <div itemprop="text">
+      {{ faq.templateContent | safe }}
+    </div>
+  </div>
+</div>
+{% endif %}
+{%- endfor -%}

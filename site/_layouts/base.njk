@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ locale }}" {{ htmlprops | safe }}>
+<html lang="{{ t.locale or site.locale }}" {{ htmlprops | safe }}>
   <head>
     {% include "head.njk" %}
     {% include "assets.njk" %}

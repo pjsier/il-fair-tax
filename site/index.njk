@@ -1,8 +1,32 @@
 ---
-layout: redirect
-url: /en/
-eleventyExcludeFromCollections: true
+layout: base
+tags: redirect
+pagination:
+  data: i18n
+  size: 1
+  alias: t
+permalink: "{{ t.locale }}/"
 eleventyComputed:
-  title: "{{ title }}"
-  description: "{{ description }}"
+  title: "{{ t.homeTitle }}"
+mainClass: "landing"
 ---
+<div class="banner">
+  <h1>{{ t.homeTitle }}</h1>
+</div>
+<section id="scroll">
+  <div class="scroll-graphic">
+    <div class="chart"></div>
+  </div>
+  <div class="scroll-steps">
+    <div class="step what-it-is">
+    </div>
+    <div class="step why-we-need-it">
+    </div>
+    <div class="step common-misconceptions">
+    </div>
+  </div>
+</section>
+<div class="">
+</div>
+
+<script type="module">{% include "index.js" %}</script>

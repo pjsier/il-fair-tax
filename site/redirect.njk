@@ -1,0 +1,21 @@
+---
+pagination:
+  data: collections.redirects
+  size: 1
+  alias: redirect
+permalink: "/{{ redirect.url | baseUrl }}/"
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "{{ redirect.data.title }}"
+  description: "{{ redirect.data.description }}"
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    <link rel="canonical" href="{{ site.baseurl }}{{ redirect.url }}" />
+    <meta http-equiv="Refresh" content="0; url='{{ site.baseurl }}{{ redirect.url }}'" />
+    {% include "head.njk" %}
+  </head>
+  <body>
+  </body>
+</html>

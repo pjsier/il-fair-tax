@@ -3,34 +3,34 @@
   <div class="flex-row-center">
     <div class="flex-column flex-grow-1 align-center justify-center">
       <p class="bold" id="currentTaxAmount"></p>
-      <p>{{ currentTaxes }}</p>
+      <p>{{ t.currentTaxes }}</p>
     </div>
     <div class="flex-column flex-grow-1 align-center justify-center">
       <p class="bold" id="fairTaxAmount"></p>
-      <p>{{ fairTax }}</p>
+      <p>{{ t.fairTax }}</p>
     </div>
   </div>
-  <h3 class="income-chart-heading margin-top-6 margin-bottom-1-5">{{ yourTaxes }}</h3>
+  <h3 class="income-chart-heading margin-top-6 margin-bottom-1-5">{{ t.yourTaxes }}</h3>
   <div class="hidden">
-    <span id="tax-change-up">{{ taxChangeUp | safe }}</span>
-    <span id="tax-change-down">{{ taxChangeDown | safe }}</span>
-    <span id="tax-change-same">{{ taxChangeSame }}</span>
+    <span id="tax-change-up">{{ t.taxChangeUp | safe }}</span>
+    <span id="tax-change-down">{{ t.taxChangeDown | safe }}</span>
+    <span id="tax-change-same">{{ t.taxChangeSame }}</span>
   </div>
   <div class="income-chart median margin-bottom-4 flex-row-center">
     <div class="flex-row-center min-height-6">
-      <div class="chart-label min-width-20 text-right padding-1">{{ currentTax }}</div>
+      <div class="chart-label min-width-20 text-right padding-1">{{ t.currentTax }}</div>
       <div id="current-tax-bar" class="flex-grow-1">
         <div class="current-tax-width income-chart-bar height-6"></div>
       </div>
     </div>
     <div class="flex-row-center min-height-6">
-      <div class="chart-label min-width-20 text-right padding-1">{{ fairTax }}</div>
+      <div class="chart-label min-width-20 text-right padding-1">{{ t.fairTax }}</div>
       <div id="fair-tax-bar" class="flex-grow-1">
         <div class="fair-tax-width income-chart-bar height-6"></div>
       </div>
     </div>
     <div class="flex-row-center min-height-6">
-      <div class="chart-label min-width-20 text-right padding-1">{{ income }}</div>
+      <div class="chart-label min-width-20 text-right padding-1">{{ t.income }}</div>
       <div class="flex-grow-1">
         <div class="income-width income-chart-bar height-6"></div>
       </div>

@@ -28,6 +28,7 @@ module.exports = {
   description: "IL Fair Tax",
   environment,
   lang: "en",
+  langRoot: "/en/",
   languages: [
     {
       value: "en",
