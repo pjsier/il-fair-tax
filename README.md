@@ -7,4 +7,3 @@
 - Styling
 - Form error messages
 - Social share metadata
-- Automatically generate metadata image assets, manifest.webmanifest

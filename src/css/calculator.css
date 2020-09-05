@@ -171,7 +171,7 @@ label.checkbox input {
 .help {
   font-size: 14px;
   margin-top: var(--grid-05);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 form.calculator {

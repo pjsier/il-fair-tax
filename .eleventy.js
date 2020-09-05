@@ -1,3 +1,4 @@
+const Image = require("@11ty/eleventy-img")
 const sitemap = require("@quasibit/eleventy-plugin-sitemap")
 const { baseurl, languages } = require("./site/_data/site")
 
@@ -16,6 +17,21 @@ module.exports = function (eleventyConfig) {
     },
   })
   eleventyConfig.setLibrary("md", markdownLib)
+
+  eleventyConfig.addNunjucksAsyncShortcode("resizeImage", async function (
+    src,
+    sizes,
+    outputFormat = "png"
+  ) {
+    const stats = await Image(src, {
+      widths: [+sizes.split("x")[0]],
+      formats: [outputFormat],
+      outputDir: "./site/img",
+    })
+
+    const props = stats[outputFormat].slice(-1)[0]
+    return props.url
+  })
 
   // This allows Eleventy to watch for file changes during local development.
   eleventyConfig.setUseGitIgnore(false)
@@ -64,6 +80,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "src/img": "img",
+    "site/img": "img",
   })
 
   eleventyConfig.addPlugin(sitemap, {

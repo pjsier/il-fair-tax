@@ -1,9 +1,9 @@
-{% set css %}
-  {% include "style.css" %}
-  {% if style %}
-    {% include style %}
-  {% endif %}
-{% endset %}
+{%- set css -%}
+  {%- include "style.css" -%}
+  {%- if style -%}
+    {%- include style -%}
+  {%- endif -%}
+{%- endset -%}
 
 <style type="text/css">
   {{ css | safe }}

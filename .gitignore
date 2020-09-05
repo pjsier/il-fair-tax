@@ -6,3 +6,5 @@ dist/
 site/_includes/webpack.njk
 site/_includes/*.js
 site/_includes/*.css
+site/img/*
+!site/img/.keep
