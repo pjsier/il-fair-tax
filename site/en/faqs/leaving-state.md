@@ -1,7 +1,7 @@
 ---
 tags: faqs
 title: Won't this make more people leave the state?
-order: 2
+order: 6
 ---
 
 Lorem ipsum
