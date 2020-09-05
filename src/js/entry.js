@@ -1,6 +1,5 @@
 import "formdata-polyfill"
 import cssVars from "css-vars-ponyfill"
-import "./index.js"
 import "./calculator.js"
 
 cssVars({
