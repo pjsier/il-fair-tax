@@ -248,10 +248,6 @@ footer {
   margin-top: var(--grid-6);
 }
 
-.margin-top-1-5 {
-  margin-top: var(--grid-1-5);
-}
-
 .margin-bottom-1 {
   margin-bottom: var(--grid);
 }
@@ -398,6 +394,10 @@ ul.margin-bottom-4 {
 @media screen and (max-width: 750px) {
   .flex-wrap-mobile {
     flex-wrap: wrap;
+  }
+  .margin-top-1-5-mobile,
+  ul[class].margin-top-1-5-mobile {
+    margin-top: var(--grid-1-5);
   }
   .margin-bottom-4-mobile {
     margin-bottom: var(--grid-4);
