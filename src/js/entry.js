@@ -1,4 +1,5 @@
 import "formdata-polyfill"
+import "classlist-polyfill"
 import cssVars from "css-vars-ponyfill"
 import "./calculator.js"
 
@@ -6,19 +7,19 @@ cssVars({
   preserveVars: true,
   watch: true,
   variables: {
-    "--results-display": "none",
     "--current-tax-pct": "0%",
     "--fair-tax-pct": "0%",
   },
 })
 
 function onChange() {
-  const { income, currentTaxPct, fairTaxPct } = window.formProps
+  const currentTaxPct = +document.getElementById("current-tax-bar").dataset
+    .percent
+  const fairTaxPct = +document.getElementById("fair-tax-bar").dataset.percent
   cssVars({
     preserveVars: true,
     watch: true,
     variables: {
-      "--results-display": income >= 0 ? "block" : "none",
       "--current-tax-pct": `${Math.max(0, currentTaxPct).toFixed(2)}%`,
       "--fair-tax-pct": `${Math.max(0, fairTaxPct).toFixed(2)}%`,
     },

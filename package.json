@@ -60,6 +60,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "classlist-polyfill": "^1.2.0",
     "css-vars-ponyfill": "^2.3.2",
     "formdata-polyfill": "^3.0.20"
   },

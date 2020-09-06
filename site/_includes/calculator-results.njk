@@ -1,4 +1,4 @@
-<div id="calculator-results">
+<div id="calculator-results" class="hidden block">
   <h2 id="change-description" class="text-center margin-bottom-4" aria-live="polite"></h2>
   <div class="flex-row-center">
     <div class="flex-column flex-grow-1 align-center justify-center">
@@ -10,22 +10,22 @@
       <p>{{ t.fairTax }}</p>
     </div>
   </div>
-  <h3 class="income-chart-heading margin-top-6 margin-bottom-1-5">{{ t.yourTaxes }}</h3>
+  <h3 class="block margin-top-6 margin-bottom-1-5">{{ t.yourTaxes }}</h3>
   <div class="hidden">
     <span id="tax-change-up">{{ t.taxChangeUp | safe }}</span>
     <span id="tax-change-down">{{ t.taxChangeDown | safe }}</span>
     <span id="tax-change-same">{{ t.taxChangeSame }}</span>
   </div>
-  <div class="income-chart median margin-bottom-4 flex-row-center">
+  <div class="relative margin-bottom-4 flex-column">
     <div class="flex-row-center min-height-6">
       <div class="chart-label min-width-20 text-right padding-1">{{ t.currentTax }}</div>
-      <div id="current-tax-bar" class="flex-grow-1">
+      <div id="current-tax-bar" class="flex-grow-1" data-percent="0">
         <div class="current-tax-width income-chart-bar height-6"></div>
       </div>
     </div>
     <div class="flex-row-center min-height-6">
       <div class="chart-label min-width-20 text-right padding-1">{{ t.fairTax }}</div>
-      <div id="fair-tax-bar" class="flex-grow-1">
+      <div id="fair-tax-bar" class="flex-grow-1" data-percent="0">
         <div class="fair-tax-width income-chart-bar height-6"></div>
       </div>
     </div>

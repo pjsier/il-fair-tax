@@ -153,6 +153,11 @@ footer {
   color: var(--text-color);
 }
 
+.banner {
+  width: 100%;
+  padding: var(--grid-6) var(--grid-2);
+}
+
 /* UTILITY CLASSES */
 
 .visually-hidden {
@@ -297,6 +302,10 @@ ul.margin-bottom-4 {
   line-height: 1.25;
 }
 
+.block {
+  display: block;
+}
+
 .flex-row-center {
   display: flex;
   flex-direction: row;
@@ -410,5 +419,23 @@ ul.margin-bottom-4 {
   }
   .min-width-100-mobile {
     min-width: 100%;
+  }
+}
+
+/* Hack for IE 11-only styles */
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  nav .nav-contents,
+  main,
+  .max-width,
+  .max-content-width {
+    width: 100%;
+  }
+  .min-height-80 {
+    height: 0;
   }
 }

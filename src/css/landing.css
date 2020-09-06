@@ -3,11 +3,6 @@ main {
   padding: 0;
 }
 
-.banner {
-  width: 100%;
-  padding: var(--grid-6) var(--grid-2);
-}
-
 .rotate-text {
   position: absolute;
   font-weight: 800;

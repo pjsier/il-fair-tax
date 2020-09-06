@@ -1,5 +1,4 @@
 :root {
-  --results-display: none;
   --current-tax-pct: 0%;
   --fair-tax-pct: 0%;
   --income-pct: 100%;
@@ -20,6 +19,7 @@ fieldset {
 input {
   background-color: var(--white);
   border: var(--border);
+  border-radius: var(--grid-05);
 }
 
 input:hover {
@@ -131,17 +131,8 @@ label.checkbox input {
 }
 
 #calculator-results {
-  display: var(--results-display);
-}
-
-.income-chart {
-  display: var(--results-display);
-  position: relative;
-  width: 100%;
-}
-
-.income-chart-heading {
-  display: var(--results-display);
+  display: block;
+  visibility: var(--results-visibility);
 }
 
 .income-chart-bar {
@@ -179,5 +170,14 @@ form.calculator {
   form.calculator {
     border-width: 0;
     padding: 0;
+  }
+}
+
+/* Hack for IE 11-only styles */
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  .current-tax-width,
+  .fair-tax-width {
+    width: 100%;
   }
 }

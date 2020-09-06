@@ -28,8 +28,8 @@ function updateResults({
   currentTaxAmount,
   difference,
 }) {
-  const root = document.documentElement
-  root.style.setProperty("--results-display", income > 0 ? "block" : "none")
+  const results = document.getElementById("calculator-results")
+  results.classList.toggle("hidden", income <= 0)
 
   const changeDescription = document.getElementById("change-description")
   // Update description text with current amount
@@ -63,13 +63,14 @@ function updateResults({
   const fairTaxPct = (fairTaxAmount / income) * 100
   const currentTaxPct = (currentTaxAmount / income) * 100
 
-  // Set form props so that IE 11 ponyfill can pick up values
-  window.formProps = {
-    income,
-    currentTaxPct,
-    fairTaxPct,
-  }
+  document.getElementById(
+    "current-tax-bar"
+  ).dataset.percent = currentTaxPct.toFixed(2)
+  document.getElementById("fair-tax-bar").dataset.percent = fairTaxPct.toFixed(
+    2
+  )
 
+  const root = document.documentElement
   root.style.setProperty(
     "--current-tax-pct",
     `${Math.max(0, currentTaxPct).toFixed(2)}%`
