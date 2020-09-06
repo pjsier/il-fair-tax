@@ -9,6 +9,8 @@
   {{ css | safe }}
 </style>
 
+<script type="module">{% include "index.js" %}</script>
+
 {% if site.environment != "development" %}
   {% include "webpack.njk" %}
 {% endif %}

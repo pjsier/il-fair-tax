@@ -2,6 +2,7 @@
   "locale": "es",
   "home": "Inicio",
   "about": "Acerca",
+  "menu": "Menu",
   "siteTitle": "Vota sí por impuesto justo",
   "voteYesFor": "Vota sí por",
   "voteYesForCategories": [
@@ -42,7 +43,7 @@
   "taxChangeSame": "Your taxes will stay the same",
   "currentTaxes": "Current Taxes",
   "currentTax": "Current tax",
-  "fairTax": "Fair Tax",
+  "fairTax": "Impuesto justo",
   "faqsTitle": "FAQs",
   "faqsQuestions": "Questions",
   "nav": [

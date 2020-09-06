@@ -92,20 +92,20 @@ blockquote {
   opacity: 0.7;
 }
 
-nav {
+header {
   background-color: var(--blue);
   color: var(--white);
-  padding: var(--grid-2);
-  height: var(--nav-height);
+  padding: var(--grid-3);
+  min-height: var(--nav-height);
   font-weight: bold;
   box-shadow: var(--box-shadow);
 }
 
-nav .nav-contents {
+header .nav-contents {
   max-width: var(--max-nav-width);
 }
 
-nav a {
+header a {
   color: var(--white);
 }
 
@@ -156,6 +156,30 @@ footer {
 .banner {
   width: 100%;
   padding: var(--grid-6) var(--grid-2);
+}
+
+#nav-toggle {
+  cursor: pointer;
+  display: none;
+  text-align: right;
+  appearance: none;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--white);
+  padding: 0;
+  margin: 0;
+}
+
+#nav-toggle [aria-hidden="true"] {
+  margin-left: var(--grid-05);
+}
+
+#nav-menu {
+  padding-left: 0;
 }
 
 /* UTILITY CLASSES */
@@ -343,6 +367,10 @@ ul.margin-bottom-4 {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -420,6 +448,22 @@ ul.margin-bottom-4 {
   .min-width-100-mobile {
     min-width: 100%;
   }
+  #nav-toggle {
+    display: flex;
+  }
+  #nav-toggle[aria-expanded="false"] + #nav-menu {
+    display: none;
+  }
+  #nav-menu {
+    margin-top: var(--grid);
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  nav ul li {
+    margin-right: 0;
+    text-align: right;
+  }
 }
 
 /* Hack for IE 11-only styles */
@@ -429,7 +473,7 @@ ul.margin-bottom-4 {
     display: flex;
     flex-direction: column;
   }
-  nav .nav-contents,
+  header .nav-contents,
   main,
   .max-width,
   .max-content-width {
