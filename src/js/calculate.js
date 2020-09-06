@@ -259,6 +259,8 @@ function calculateEducationCredit({ income, status, k12Expenses }) {
   return Math.min(MAX_K12_CREDIT, eligibleK12Expenses * K12_CREDIT_PERCENTAGE)
 }
 
+// https://web.archive.org/web/20190309010153js_/https://www.eitcoutreach.org/customjs/eitc_calculator.js
+// https://docs.legis.wisconsin.gov/misc/lfb/informational_papers/january_2019/0003_earned_income_tax_credit_informational_paper_3.pdf#page=6
 // https://www2.illinois.gov/rev/programs/EIC/Pages/default.aspx
 // https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-tax-credit-income-limits-and-maximum-credit-amounts
 // https://www.taxpolicycenter.org/statistics/eitc-parameters
@@ -275,28 +277,28 @@ function calculateEIC({ income, status, numDependentsUnder17 }) {
       baseAmount: 6780,
       beginPhaseOut: 8490,
       marriageRelief: 5680, // Max filed jointly - max filed single
-      creditRate: 0.0765,
+      phaseInRate: 0.0765,
       phaseOutRate: 0.0765,
     },
     {
       baseAmount: 10180,
       beginPhaseOut: 18660,
-      marriageRelief: 5680,
-      creditRate: 0.34,
+      marriageRelief: 5690,
+      phaseInRate: 0.34,
       phaseOutRate: 0.1598,
     },
     {
       baseAmount: 14290,
       beginPhaseOut: 18660,
-      marriageRelief: 5680,
-      creditRate: 0.4,
+      marriageRelief: 5690,
+      phaseInRate: 0.4,
       phaseOutRate: 0.2106,
     },
     {
       baseAmount: 14290,
       beginPhaseOut: 18660,
-      marriageRelief: 5680,
-      creditRate: 0.45,
+      marriageRelief: 5690,
+      phaseInRate: 0.45,
       phaseOutRate: 0.2106,
     },
   ]
@@ -305,13 +307,13 @@ function calculateEIC({ income, status, numDependentsUnder17 }) {
     baseAmount,
     beginPhaseOut,
     marriageRelief,
-    creditRate,
+    phaseInRate,
     phaseOutRate,
   } = EIC_2018_LEVELS[Math.min(3, eligibleChildren)]
 
   const roundedIncome = income <= 0 ? 0 : Math.floor(income / 50) * 50 + 25
   const marriagePenaltyRelief = status === STATUS_JOINT ? marriageRelief : 0
-  const grossEic = Math.min(roundedIncome, baseAmount) * creditRate
+  const grossEic = Math.min(roundedIncome, baseAmount) * phaseInRate
   const subtractAmount = Math.max(
     0,
     (roundedIncome - (beginPhaseOut + marriagePenaltyRelief)) * phaseOutRate
