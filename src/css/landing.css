@@ -12,7 +12,7 @@ main {
   bottom: 0;
   opacity: 0;
   white-space: nowrap;
-  animation: rotate-text-up 17.5s;
+  animation: rotate-text-up 15s;
   animation-iteration-count: infinite;
 }
 
@@ -20,16 +20,16 @@ main {
   animation-delay: 0s;
 }
 .rotate-text:nth-child(2) {
-  animation-delay: 3.5s;
+  animation-delay: 3s;
 }
 .rotate-text:nth-child(3) {
-  animation-delay: 7s;
+  animation-delay: 6s;
 }
 .rotate-text:nth-child(4) {
-  animation-delay: 10.5s;
+  animation-delay: 9s;
 }
 .rotate-text:nth-child(5) {
-  animation-delay: 14s;
+  animation-delay: 12s;
 }
 
 @keyframes rotate-text-up {
