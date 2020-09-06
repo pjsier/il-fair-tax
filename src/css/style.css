@@ -455,7 +455,7 @@ ul.margin-bottom-4 {
     display: none;
   }
   #nav-menu {
-    margin-top: var(--grid);
+    margin-top: var(--grid-2);
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
@@ -463,6 +463,9 @@ ul.margin-bottom-4 {
   nav ul li {
     margin-right: 0;
     text-align: right;
+  }
+  nav ul li:not(:last-child) {
+    margin-bottom: var(--grid);
   }
 }
 
