@@ -4,6 +4,10 @@
 
 ## To Dos
 
-- Styling
 - Form error messages
 - Social share metadata
+
+## Potential Questions
+
+- Something clarifying that the bill has already passed
+- Explanation of where tax burden falls

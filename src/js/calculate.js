@@ -271,6 +271,7 @@ function calculateEIC({ income, status, numDependentsUnder17 }) {
 
   const eligibleChildren = Math.min(3, numDependentsUnder17)
 
+  // TODO: Use 2019 parameters instead of 2018 (current)
   // https://www.taxpolicycenter.org/statistics/eitc-parameters
   const EIC_2018_LEVELS = [
     {

@@ -1,7 +1,7 @@
 ---
 tags: faqs
 title: What about pensions?
-order: 4
+order: 6
 ---
 
 Lorem ipsum
