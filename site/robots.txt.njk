@@ -3,11 +3,13 @@ permalink: /robots.txt
 layout: null
 eleventyExcludeFromCollections: true
 ---
-{% if site.environment == 'production' %}
+User-agent: *
+Disallow: /
+{# {% if site.environment == 'production' %}
 User-agent: *
 Allow: /
 Sitemap: {{ site.baseurl }}/sitemap.xml
 {% else %}
 User-agent: *
 Disallow: /
-{% endif %}
+{% endif %} #}
