@@ -171,7 +171,7 @@ label.checkbox input {
 }
 
 form.calculator {
-  border: solid var(--grid-05) var(--gray);
+  border: solid var(--grid-05) var(--text-color);
   padding: var(--grid-3);
 }
 

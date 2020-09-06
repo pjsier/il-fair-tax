@@ -46,6 +46,7 @@ module.exports = function (eleventyConfig) {
       .sort(({ data: { order: a } }, { data: { order: b } }) => a - b)
   )
 
+  // TODO: Shortcode to pull content from collection by tag, name?
   eleventyConfig.addCollection("landing", (collectionApi) =>
     collectionApi.getFilteredByTag("landing")
   )

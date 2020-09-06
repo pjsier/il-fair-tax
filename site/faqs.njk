@@ -21,7 +21,7 @@ htmlprops: 'itemscope itemtype="https://schema.org/FAQPage"'
 {%- for faq in collections.faqs -%}
 {% if faq.data.locale == t.locale %}
   <li class="margin-bottom-1-5">
-    <a href="#{{ faq.fileSlug }}">
+    <a class="underlined text-color-active-black" href="#{{ faq.fileSlug }}">
       {{ faq.data.title }}
     </a>
   </li>

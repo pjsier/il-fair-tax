@@ -30,15 +30,19 @@ style: landing.css
   </div>
 </section>
 
-<section class="banner padding-2 padding-top-bottom-4 flex-row-center justify-center bg-teal-lighter">
-  <div class="max-width flex-grow-1">
-    <h2>{{ t.calculatorTitle }}</h2>
-    <a href="/{{ t.locale }}/calculator/">CALCULATOR</a>
+<section class="banner flex-row-center justify-center bg-teal-lighter">
+  <div class="max-content-width flex-row-center flex-grow-1 content">
+    <div class="min-width-12 width-12 margin-right-3">
+      {% include "calculator.svg" %}
+    </div>
+    <h2 class="margin-0 font-size-1">
+      {{ t.calculatorCta | safe }}
+    </h2>
   </div>
 </section>
 
-<section class="padding-2 padding-top-bottom-4 flex-row-center justify-center">
-  <div class="max-width flex-grow-1 content">
+<section class="banner flex-row-center justify-center">
+  <div class="max-content-width flex-grow-1 content">
     {% for section in collections.landing %}
       {% if section.data.locale == t.locale and section.fileSlug == "about-section" %}
         {{ section.templateContent | safe }}
@@ -47,7 +51,7 @@ style: landing.css
   </div>
 </section>
 
-<section class="banner padding-2 padding-top-bottom-4 flex-row-center justify-center bg-orange">
+<section class="banner flex-row-center justify-center bg-orange">
   <div class="max-content-width flex-grow-1 flex-row-center flex-wrap-mobile justify-between justify-center-mobile">
     <div class="bold margin-bottom-4-mobile">
       <p>{{ t.faqCta }}</p>
@@ -60,8 +64,8 @@ style: landing.css
   </div>
 </section>
 
-<section class="padding-2 padding-top-bottom-4 flex-row-center justify-center">
-  <div class="max-width flex-grow-1">
+<section class="banner flex-row-center justify-center">
+  <div class="max-content-width flex-grow-1">
     <h2>Join us</h2>
     <div class="text-center">
       <a class="button padding-2 padding-left-right-4 font-size-1-5 inline-block border-radius-1" href="{{ t.getInvolvedUrl }}" target="_blank" rel="noopener">

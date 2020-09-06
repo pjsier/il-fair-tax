@@ -1,11 +1,11 @@
-<footer class="flex-row-center justify-center">
+<footer class="banner flex-row-center justify-center">
   <div class="max-content-width flex-grow-1 flex-row-center justify-between flex-wrap">
     <div>
       <p>
         {{ t.createdBy }}
       </p>
     </div>
-    <ul>
+    <ul class="min-width-100-mobile margin-top-1-5">
       {% for language in site.languages %}
         {% if language.value != t.locale %}
         <li class="margin-bottom-1">

@@ -5,7 +5,7 @@ main {
 
 .banner {
   width: 100%;
-  min-height: var(--grid-12);
+  padding: var(--grid-6) var(--grid-2);
 }
 
 .rotate-text {
@@ -86,6 +86,10 @@ main {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+#calculator-icon {
+  width: 100%;
 }
 
 #il-svg {

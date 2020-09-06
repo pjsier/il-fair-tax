@@ -34,8 +34,8 @@
   --font-size-2-5: 45px;
   --font-size-3: 54px;
   --nav-height: 60px;
-  --max-nav-width: 1200px;
-  --max-width: 1200px;
+  --max-nav-width: 1024px;
+  --max-width: 1024px;
   --max-content-width: 720px;
   --min-input-width: 300px;
 }
@@ -143,6 +143,16 @@ footer {
   margin-bottom: var(--grid-2);
 }
 
+.content a {
+  text-decoration: underline;
+}
+
+.content a:hover,
+.content a:focus,
+.content a:active {
+  color: var(--text-color);
+}
+
 /* UTILITY CLASSES */
 
 .visually-hidden {
@@ -199,6 +209,12 @@ footer {
   color: var(--blue);
 }
 
+.text-color-active-black:active,
+.text-color-active-black:focus,
+.text-color-active-black:hover {
+  color: var(--blue);
+}
+
 .border-radius-1 {
   border-radius: var(--grid);
 }
@@ -224,17 +240,16 @@ footer {
   padding-right: var(--grid-4);
 }
 
-.padding-top-bottom-4 {
-  padding-top: var(--grid-4);
-  padding-bottom: var(--grid-4);
-}
-
 .margin-0 {
   margin: 0;
 }
 
 .margin-top-6 {
   margin-top: var(--grid-6);
+}
+
+.margin-top-1-5 {
+  margin-top: var(--grid-1-5);
 }
 
 .margin-bottom-1 {
@@ -252,6 +267,10 @@ ul.margin-bottom-4 {
 
 .margin-bottom-6 {
   margin-bottom: var(--grid-6);
+}
+
+.margin-right-3 {
+  margin-right: var(--grid-3);
 }
 
 .bold {
@@ -349,6 +368,14 @@ ul.margin-bottom-4 {
 
 .max-content-width {
   max-width: var(--max-content-width);
+}
+
+.width-12 {
+  width: var(--grid-12);
+}
+
+.min-width-12 {
+  min-width: var(--grid-12);
 }
 
 .min-width-20 {
