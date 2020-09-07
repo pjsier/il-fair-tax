@@ -95,7 +95,7 @@ blockquote {
 header {
   background-color: var(--blue);
   color: var(--white);
-  padding: var(--grid-3);
+  padding: var(--grid-3) var(--grid-2);
   min-height: var(--nav-height);
   font-weight: bold;
   box-shadow: var(--box-shadow);
