@@ -4,7 +4,6 @@
 
 ## To Dos
 
-- Form error messages
 - Social share metadata
 
 ## Potential Questions
