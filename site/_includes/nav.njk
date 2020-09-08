@@ -9,6 +9,11 @@
         <span aria-hidden="true">☰</span>
       </button>
       <ul id="nav-menu" class="margin-0 flex-row-start">
+        {% for link in t.nav %}
+        <li>
+          <a href="{{ link.url }}" {%- if link.url[0] != "/" -%}target="_blank" rel="noopener"{%- endif -%}>{{ link.label }}</a>
+        </li>
+        {% endfor %}
         {% for language in site.languages %}
           {% if language.value != t.locale %}
           <li>
@@ -17,11 +22,6 @@
             </a>
           </li>
           {% endif %}
-        {% endfor %}
-        {% for link in t.nav %}
-        <li>
-          <a href="{{ link.url }}" {%- if link.url[0] != "/" -%}target="_blank" rel="noopener"{%- endif -%}>{{ link.label }}</a>
-        </li>
         {% endfor %}
       </ul>
     </nav>
