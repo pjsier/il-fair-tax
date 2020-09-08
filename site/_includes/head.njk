@@ -20,14 +20,13 @@
 <meta property="og:description" content="{{ description or page.description or site.description }}" />
 <meta property="og:type" content="{{ site.type }}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-{# <meta property="og:image" content="{{ site.url }}{{ image or page.image or site.image }}" />
-<meta property="og:image:alt" content="{{ site.url }}{{ image or page.image or site.image }}" />
-<meta property="og:image:width" content="" />
-<meta property="og:image:height" content="" /> #}
+<meta property="og:image" content="{{ site.url }}/img/social.png" />
+<meta property="og:image:alt" content="{{ t.homeTitle or 'Vote yes for Fair Tax' }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
-{# <meta name="twitter:card" content="" />
-<meta name="twitter:creator" content="" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="{{ title or page.title or redirect.title or site.title }}{% if page.url != "/" and page.url != site.langRoot %} | {{ siteTitle or site.title }}{% endif %}" />
 <meta name="twitter:description" content="{{ description or page.description or redirect.description or site.description }}" />
-<meta name="twitter:image:src" content="" />
-<meta name="twitter:image:alt" content="" /> #}
+<meta name="twitter:image:src" content="{{ site.url }}/img/social.png" />
+<meta name="twitter:image:alt" content="{{ t.homeTitle or 'Vote yes for Fair Tax' }}" />
