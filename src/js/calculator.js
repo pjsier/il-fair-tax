@@ -7,6 +7,9 @@ import {
 } from "./utils"
 
 function handleForm(form) {
+  // Update the number of dependents before calculating
+  updateDependentsFromUnder17()
+
   const params = formToObj(form)
 
   const currentTax = calculateCurrentTax(params)
@@ -79,6 +82,15 @@ function updateResults({
     "--fair-tax-pct",
     `${Math.max(0, fairTaxPct).toFixed(2)}%`
   )
+}
+
+// Make sure the number of dependents is at least the number of dependents under 17
+function updateDependentsFromUnder17() {
+  const numDependentsUnder17El = document.getElementById("numDependentsUnder17")
+  const numDependentsEl = document.getElementById("numDependents")
+  if (+numDependentsEl.value < +numDependentsUnder17El.value) {
+    numDependentsEl.value = numDependentsUnder17El.value
+  }
 }
 
 // Set currency formatting after blur to avoid issues with label masking
