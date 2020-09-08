@@ -7,9 +7,6 @@ import {
 } from "./utils"
 
 function handleForm(form) {
-  // Update the number of dependents before calculating
-  updateDependentsFromUnder17()
-
   const params = formToObj(form)
 
   const currentTax = calculateCurrentTax(params)
@@ -133,12 +130,23 @@ function addInputListeners(form) {
       if (input.dataset.type === "currency") {
         onCurrencyBlur(input)
       }
+      // Update dependents based on number under 17
+      if (input.name === "numDependents") {
+        updateDependentsFromUnder17()
+        handleForm(form)
+      }
     })
     if (input.dataset.type === "currency") {
       input.addEventListener("focus", () => onCurrencyFocus(input))
     }
     input.addEventListener("change", () => handleForm(form))
-    input.addEventListener("input", () => handleForm(form))
+    input.addEventListener("input", () => {
+      if (input.name === "numDependentsUnder17") {
+        // Update the number of dependents before calculating
+        updateDependentsFromUnder17()
+      }
+      handleForm(form)
+    })
   })
 }
 
