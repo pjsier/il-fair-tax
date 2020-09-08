@@ -29,6 +29,9 @@ module.exports = {
   environment,
   lang: "en",
   langRoot: "/en/",
+  production: environment === "production",
+  deployed: ["staging", "production"].includes(environment),
+  googleAnalyticsId: "UA-177434997-1",
   languages: [
     {
       value: "en",

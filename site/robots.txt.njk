@@ -7,7 +7,7 @@ User-agent: *
 Disallow: /
 {# 
 TODO: Reenable
-{% if site.environment == 'production' %}
+{% if site.production %}
 User-agent: *
 Allow: /
 Sitemap: {{ site.baseurl }}/sitemap.xml
