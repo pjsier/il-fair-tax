@@ -26,8 +26,11 @@
   --grid-6: 36px;
   --grid-7: 42px;
   --grid-12: 72px;
+  --grid-16: 96px;
   --grid-20: 120px;
   --grid-80: 480px;
+  --font-size-small: 14px;
+  --font-size-reduced: 16px;
   --font-size: 18px;
   --font-size-1-5: 26px;
   --font-size-2: 36px;
@@ -264,6 +267,10 @@ footer {
   padding-bottom: var(--grid-3);
 }
 
+.padding-right-1 {
+  padding-right: var(--grid);
+}
+
 .padding-left-right-4 {
   padding-left: var(--grid-4);
   padding-right: var(--grid-4);
@@ -302,8 +309,20 @@ ul.margin-bottom-4 {
   font-weight: bold;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .text-right {
   text-align: right;
+}
+
+.font-size-small {
+  font-size: var(--font-size-small);
+}
+
+.font-size-reduced {
+  font-size: var(--font-size-reduced);
 }
 
 .font-size-1 {
@@ -320,6 +339,10 @@ ul.margin-bottom-4 {
 
 .font-size-3 {
   font-size: var(--font-size-3);
+}
+
+.line-height-1 {
+  line-height: 1;
 }
 
 .line-height-1-25 {
@@ -409,6 +432,11 @@ ul.margin-bottom-4 {
 
 .min-width-12 {
   min-width: var(--grid-12);
+}
+
+.width-16 {
+  min-width: var(--grid-16);
+  max-width: var(--grid-16);
 }
 
 .min-width-20 {

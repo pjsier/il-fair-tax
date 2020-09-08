@@ -36,7 +36,7 @@ style: landing.css
       {% include "calculator.svg" %}
     </div>
     <h2 class="margin-0 font-size-1">
-      {{ t.calculatorCta | safe }}
+      {{ t.calculatorCta | markdown | safe }}
     </h2>
   </div>
 </section>

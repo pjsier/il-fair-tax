@@ -72,10 +72,6 @@ main {
   background-color: var(--orange);
 }
 
-.bg-teal {
-  background-color: var(--teal);
-}
-
 .bg-teal-lighter {
   background-color: var(--teal-lighter);
 }

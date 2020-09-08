@@ -36,6 +36,8 @@ module.exports = function (eleventyConfig) {
     return props.url
   })
 
+  eleventyConfig.addFilter("markdown", (value) => markdownLib.render(value))
+
   eleventyConfig.addFilter("baseUrl", (value) =>
     value.split("/").slice(2).join("")
   )

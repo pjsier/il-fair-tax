@@ -17,25 +17,26 @@
     <span id="tax-change-same">{{ t.taxChangeSame }}</span>
   </div>
   <div class="relative margin-bottom-4 flex-column">
-    <div class="flex-row-center min-height-6">
-      <div class="chart-label min-width-20 text-right padding-1">{{ t.currentTax }}</div>
+    <div class="flex-row-center min-height-6 margin-bottom-1">
+      <div class="chart-label width-16 text-right padding-right-1 line-height-1 font-size-reduced">{{ t.currentTax }}</div>
       <div id="current-tax-bar" class="flex-grow-1" data-percent="0">
         <div class="current-tax-width income-chart-bar height-6"></div>
       </div>
     </div>
-    <div class="flex-row-center min-height-6">
-      <div class="chart-label min-width-20 text-right padding-1">{{ t.fairTax }}</div>
+    <div class="flex-row-center min-height-6 margin-bottom-1">
+      <div class="chart-label width-16 text-right padding-right-1 line-height-1 font-size-reduced">{{ t.fairTax }}</div>
       <div id="fair-tax-bar" class="flex-grow-1" data-percent="0">
         <div class="fair-tax-width income-chart-bar height-6"></div>
       </div>
     </div>
     <div class="flex-row-center min-height-6">
-      <div class="chart-label min-width-20 text-right padding-1">{{ t.income }}</div>
+      <div class="chart-label width-16 text-right padding-right-1 line-height-1 font-size-reduced">{{ t.income }}</div>
       <div class="flex-grow-1">
         <div class="income-width income-chart-bar height-6"></div>
       </div>
     </div>
   </div>
+  <div class="content italic font-size-small">
+    {{ t.calculatorDisclaimer | markdown | safe }}
+  </div>
 </div>
-
-{# TODO: Add disclaimer currently on state site #}

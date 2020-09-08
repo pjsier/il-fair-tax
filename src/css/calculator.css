@@ -156,7 +156,7 @@ label.checkbox input {
 }
 
 .help {
-  font-size: 14px;
+  font-size: var(--font-size-small);
   margin-top: var(--grid-05);
   opacity: 0.8;
 }
