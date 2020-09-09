@@ -14,7 +14,7 @@
           <a href="{{ link.url }}" {%- if link.url[0] != "/" -%}target="_blank" rel="noopener"{%- endif -%}>{{ link.label }}</a>
         </li>
         {% endfor %}
-        {% for language in site.languages %}
+        {# {% for language in site.languages %}
           {% if language.value != t.locale %}
           <li>
             <a href="/{{ language.value }}/{{ (page.url or url) | baseUrl }}">
@@ -22,7 +22,7 @@
             </a>
           </li>
           {% endif %}
-        {% endfor %}
+        {% endfor %} #}
       </ul>
     </nav>
   </div>
