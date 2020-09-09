@@ -9,10 +9,13 @@ permalink: "{{ t.locale }}/{{ page.fileSlug }}/"
 eleventyComputed:
   title: "{{ t.faqsTitle }}"
 htmlprops: 'itemscope itemtype="https://schema.org/FAQPage"'
+mainClass: "content"
 ---
 <h1>
   {{ t.faqsTitle }}
 </h1>
+
+{% localecontent collections.partials, t.locale, "faq-about" | safe %}
 
 <h2>
   {{ t.faqsQuestions }}

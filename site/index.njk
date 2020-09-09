@@ -43,11 +43,7 @@ style: landing.css
 
 <section class="banner flex-row-center justify-center">
   <div class="max-content-width flex-grow-1 content">
-    {% for section in collections.landing %}
-      {% if section.data.locale == t.locale and section.fileSlug == "about-section" %}
-        {{ section.templateContent | safe }}
-      {% endif %}
-    {% endfor %}
+    {% localecontent collections.partials, t.locale, "about-section" | safe %}
   </div>
 </section>
 

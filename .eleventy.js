@@ -49,14 +49,28 @@ module.exports = function (eleventyConfig) {
       .sort(({ data: { order: a } }, { data: { order: b } }) => a - b)
   )
 
-  // TODO: Shortcode to pull content from collection by tag, name?
-  eleventyConfig.addCollection("landing", (collectionApi) =>
-    collectionApi.getFilteredByTag("landing")
-  )
-
   eleventyConfig.addCollection("redirects", (collectionApi) =>
     collectionApi.getFilteredByTag("redirect")
   )
+
+  // Create a collection of items without permalinks so that we can reference them
+  // in a separate shortcode to pull in partial content directly
+  eleventyConfig.addCollection("partials", (collectionApi) =>
+    collectionApi.getAll().filter(({ data: { permalink } }) => !permalink)
+  )
+
+  eleventyConfig.addNunjucksShortcode("localecontent", function (
+    collection,
+    locale,
+    rawFileSlug
+  ) {
+    const fileSlug = rawFileSlug.toString()
+    const content = collection.find(
+      ({ data: { locale: contentLocale }, fileSlug: contentFileSlug }) =>
+        locale === contentLocale && fileSlug === contentFileSlug
+    )
+    return content ? content.templateContent : ``
+  })
 
   const nonDefaultLanguages = languages
     .filter(({ default: isDefault }) => !isDefault)
