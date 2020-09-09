@@ -45,6 +45,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("faqs", (collectionApi) =>
     collectionApi
       .getFilteredByTag("faqs")
+      .filter(({ data: { hide } }) => !hide) // Ignore items if the "hide" key is enabled
       .sort(({ data: { order: a } }, { data: { order: b } }) => a - b)
   )
 
