@@ -3,7 +3,8 @@
   "home": "Home",
   "about": "About",
   "menu": "Menu",
-  "homeTitle": "Vote yes for Fair Tax",
+  "homeTitle": "Vote Yes for Fair Tax",
+  "homeDescription": "Learn about how we can make Illinois income taxes more fair",
   "voteYesFor": "Vote yes for",
   "voteYesForCategories": [
     "Fair Tax",

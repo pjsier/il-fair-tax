@@ -3,6 +3,8 @@
   "home": "Inicio",
   "about": "Acerca",
   "menu": "Menu",
+  "homeTitle": "Vota sí por impuesto justo",
+  "homeDescription": "Learn about how we can make Illinois income taxes more fair",
   "siteTitle": "Vota sí por impuesto justo",
   "voteYesFor": "Vota sí por",
   "voteYesForCategories": [
@@ -16,7 +18,6 @@
   "fairTaxFAQs": "Fair Tax FAQs",
   "getInvolved": "Get involved",
   "getInvolvedUrl": "https://www.yesforfairtax.org/join-us/",
-  "homeTitle": "Vota sí por impuesto justo",
   "calculatorCta": "Find out for yourself how the Fair Tax would affect you and your family with the [Fair Tax Calculator](/es/calculator/)",
   "calculatorTitle": "Impuesto justo calculadora",
   "calculatorDescription": "",

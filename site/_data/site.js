@@ -20,12 +20,12 @@ const baseurl =
     : "http://localhost:8080"
 
 module.exports = {
-  name: "IL Fair Tax",
-  title: "IL Fair Tax",
+  name: "Vote Yes for Fair Tax",
+  title: "Vote Yes for Fair Tax",
   type: "website",
   baseurl,
   url: baseurl,
-  description: "IL Fair Tax",
+  description: "Learn about how we can make Illinois income taxes more fair",
   environment,
   lang: "en",
   langRoot: "/en/",

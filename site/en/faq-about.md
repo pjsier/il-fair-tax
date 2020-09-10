@@ -4,8 +4,6 @@ permalink: false
 locale: en
 ---
 
-## About the Fair Tax
+The Fair Tax would raise the money we need to provide quality public education, improve our roads and infrastructure, and create quality jobs all through a modest tax increase for the top 3% of incomes in the state. With many programs still hurting from the state going without a budget for so long and a global pandemic, it's more important than ever that we strengthen essential services with the funding they need.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Eu sem integer vitae justo eget. Porttitor eget dolor morbi non arcu risus quis. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Arcu ac tortor dignissim convallis aenean et. Euismod lacinia at quis risus. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis.
-
-Sed viverra tellus in hac habitasse platea. Risus at ultrices mi tempus imperdiet nulla malesuada. Amet massa vitae tortor condimentum lacinia quis vel. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Sit amet mauris commodo quis imperdiet. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Lacus sed viverra tellus in hac habitasse platea dictumst. In pellentesque massa placerat duis ultricies. Quis vel eros donec ac odio tempor.
+With all the noise around election season, it can be hard to separate the facts from scare tactics. To make it easier to get the information you need, we've put together answers to some common questions with sources to back them up.

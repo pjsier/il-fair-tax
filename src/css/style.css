@@ -25,6 +25,7 @@
   --grid-5: 30px;
   --grid-6: 36px;
   --grid-7: 42px;
+  --grid-8: 48px;
   --grid-12: 72px;
   --grid-16: 96px;
   --grid-20: 120px;
@@ -32,6 +33,7 @@
   --font-size-small: 14px;
   --font-size-reduced: 16px;
   --font-size: 18px;
+  --font-size-1-25: 22px;
   --font-size-1-5: 26px;
   --font-size-2: 36px;
   --font-size-2-5: 45px;
@@ -75,6 +77,11 @@ h1 {
 
 h2 {
   font-size: var(--font-size-1-5);
+  margin-bottom: var(--grid-3);
+}
+
+h3 {
+  font-size: var(--font-size-1-25);
   margin-bottom: var(--grid-3);
 }
 
@@ -281,6 +288,10 @@ footer {
   margin: 0;
 }
 
+.margin-top-4 {
+  margin-top: var(--grid-4);
+}
+
 .margin-top-6 {
   margin-top: var(--grid-6);
 }
@@ -298,8 +309,14 @@ ul.margin-bottom-4 {
   margin-bottom: var(--grid-4);
 }
 
-.margin-bottom-6 {
+.margin-bottom-6,
+ul.margin-bottom-6 {
   margin-bottom: var(--grid-6);
+}
+
+.margin-bottom-8,
+ul.margin-bottom-8 {
+  margin-bottom: var(--grid-8);
 }
 
 .margin-right-3 {

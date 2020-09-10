@@ -2,7 +2,9 @@
 
 [![Build status](https://github.com/pjsier/il-fair-tax/workflows/CICD/badge.svg)](https://github.com/pjsier/il-fair-tax/actions?query=workflow%3ACICD)
 
-## Potential Questions
+## Setup
 
-- Something clarifying that the bill has already passed
-- Explanation of where tax burden falls
+```shell
+npm install
+npm start
+```

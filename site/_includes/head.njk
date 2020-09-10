@@ -4,7 +4,6 @@
 
 <title>{{ title or page.title or redirect.title or site.title }}{% if page.url != "/" and page.url != site.langRoot %} | {{ siteTitle or site.title }}{% endif %}</title>
 <meta name="description" content="{{ description or page.description or redirect.description or site.description }}">
-<meta name="author" content="{{ site.author }}" />
 
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
@@ -21,7 +20,7 @@
 <meta property="og:type" content="{{ site.type }}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta property="og:image" content="{{ site.url }}/img/social.png" />
-<meta property="og:image:alt" content="{{ t.homeTitle or 'Vote yes for Fair Tax' }}" />
+<meta property="og:image:alt" content="{{ title or page.title or site.title }}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
@@ -29,4 +28,4 @@
 <meta name="twitter:title" content="{{ title or page.title or redirect.title or site.title }}{% if page.url != "/" and page.url != site.langRoot %} | {{ siteTitle or site.title }}{% endif %}" />
 <meta name="twitter:description" content="{{ description or page.description or redirect.description or site.description }}" />
 <meta name="twitter:image:src" content="{{ site.url }}/img/social.png" />
-<meta name="twitter:image:alt" content="{{ t.homeTitle or 'Vote yes for Fair Tax' }}" />
+<meta name="twitter:image:alt" content="{{ title or page.title or site.title }}" />

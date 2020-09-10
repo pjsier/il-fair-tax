@@ -8,6 +8,7 @@ pagination:
 permalink: "{{ t.locale }}/{{ page.fileSlug }}/"
 eleventyComputed:
   title: "{{ t.faqsTitle }}"
+  description: "{{ t.homeDescription }}"
 htmlprops: 'itemscope itemtype="https://schema.org/FAQPage"'
 mainClass: "content"
 ---
@@ -17,10 +18,10 @@ mainClass: "content"
 
 {% localecontent collections.partials, t.locale, "faq-about" | safe %}
 
-<h2>
+<h2 class="margin-top-6">
   {{ t.faqsQuestions }}
 </h2>
-<ul class="margin-bottom-4">
+<ul class="margin-bottom-8">
 {%- for faq in collections.faqs -%}
 {% if faq.data.locale == t.locale %}
   <li class="margin-bottom-1-5">
@@ -34,10 +35,10 @@ mainClass: "content"
 
 {%- for faq in collections.faqs -%}
 {% if faq.data.locale == t.locale %}
-<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="content margin-bottom-6">
-  <h2 itemprop="name" id="{{ faq.fileSlug }}">
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="margin-bottom-8">
+  <h3 itemprop="name" id="{{ faq.fileSlug }}">
     {{ faq.data.title }}
-  </h2>
+  </h3>
   <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
     <div itemprop="text">
       {{ faq.templateContent | safe }}

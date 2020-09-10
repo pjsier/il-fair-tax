@@ -8,6 +8,7 @@ pagination:
 permalink: "{{ t.locale }}/"
 eleventyComputed:
   title: "{{ t.homeTitle }}"
+  description: "{{ t.homeDescription }}"
 style: landing.css
 ---
 <section class="min-height-80 flex-column justify-center padding-2 padding-top-bottom-4 relative">
@@ -63,7 +64,10 @@ style: landing.css
 <section class="banner flex-row-center justify-center">
   <div class="max-content-width flex-grow-1">
     <h2>Join us</h2>
-    <div class="text-center">
+    <div class="content">
+      {% localecontent collections.partials, t.locale, "join-us-section" | safe %}
+    </div>
+    <div class="text-center margin-top-4">
       <a class="button padding-2 padding-left-right-4 font-size-1-5 inline-block border-radius-1" href="{{ t.getInvolvedUrl }}" target="_blank" rel="noopener">
         {{ t.getInvolved }}
       </a>

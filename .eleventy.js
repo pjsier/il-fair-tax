@@ -76,6 +76,7 @@ module.exports = function (eleventyConfig) {
     .filter(({ default: isDefault }) => !isDefault)
     .map(({ value }) => value)
 
+  // TODO: Reenable when translations are ready
   eleventyConfig.addCollection("sitemap", (collectionApi) =>
     collectionApi
       .getFilteredByTag("redirect")
@@ -90,10 +91,11 @@ module.exports = function (eleventyConfig) {
             locale: dataLocale,
             sitemap: {
               ...data.sitemap,
-              links: nonDefaultLanguages.map((lang) => ({
-                url: url.replace(`/${pageLocale}`, `/${lang}`),
-                lang,
-              })),
+              links: [],
+              // links: nonDefaultLanguages.map((lang) => ({
+              //   url: url.replace(`/${pageLocale}`, `/${lang}`),
+              //   lang,
+              // })),
             },
           },
         }
