@@ -4,7 +4,7 @@ title: What are the tax rates?
 order: 2
 ---
 
-The poorest people, who need the money most, will get the steepest cut in their tax rates, but everyone will get the same cut of their first 10k of income.
+The poorest people, who need the money most, will get the steepest cut in their tax rates, but everyone will get the same cut of their first \$10k of income.
 Right now everyone pays 4.95%. These rates were set in [Public Act 101-0008](https://www.ilga.gov/legislation/publicacts/fulltext.asp?Name=101-0008) which is set to automatically go into effect if the amendment passes.
 
 #### Single filers
