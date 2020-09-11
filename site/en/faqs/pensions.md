@@ -1,9 +1,7 @@
 ---
 tags: faqs
-title: Will this mean pensions are taxed?
-order: 6
+title: Won't this all just go to pensions?
+order: 5
 ---
 
-Illinois doesn't currently tax pension or retirement income and the Fair Tax amendment won't change that. In fact, it's likely to help protect retirement income from taxation by making sure the rich are paying their fair share.
-
-Source: [Illinois Department of Revenue question on retirement income](https://www2.illinois.gov/rev/questionsandanswers/pages/99.aspx)
+Illinois needs to fulfill its obligations to workers, but pensions are only one part of the state's budget. Education, health care, and social services are all bigger parts of the budget that would be supported by revenue from the Fair Tax. You can take a look at [a breakdown of Illinois's budget](https://www2.illinois.gov/sites/budget/Pages/InteractiveBudget.aspx) to see for yourself.

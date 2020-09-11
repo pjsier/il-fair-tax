@@ -3,7 +3,7 @@
   "home": "Home",
   "about": "About",
   "menu": "Menu",
-  "homeTitle": "Vote Yes for Fair Tax",
+  "homeTitle": "Vote Yes for the Illinois Fair Tax",
   "homeDescription": "Learn about how we can make Illinois income taxes more fair",
   "voteYesFor": "Vote yes for",
   "voteYesForCategories": [
@@ -16,7 +16,7 @@
   "faqCta": "Have questions about how this will work? Check out our FAQs for answers.",
   "fairTaxFAQs": "Fair Tax FAQs",
   "getInvolved": "Get involved",
-  "getInvolvedUrl": "https://www.yesforfairtax.org/join-us/",
+  "getInvolvedUrl": "https://actionnetwork.org/forms/pledge-to-vote-yes-for-a-fair-tax",
   "calculatorCta": "Find out for yourself how the Fair Tax would affect you and your family with the [Fair Tax Calculator](/en/calculator/)",
   "calculatorTitle": "Fair Tax Calculator",
   "calculatorDescription": "Find out for yourself how the Fair Tax would affect you and your family",
@@ -49,7 +49,11 @@
   "faqsQuestions": "Questions",
   "nav": [
     { "url": "/en/calculator/", "label": "Calculator" },
-    { "url": "/en/faqs/", "label": "FAQs" }
+    { "url": "/en/faqs/", "label": "FAQs" },
+    {
+      "url": "https://actionnetwork.org/forms/pledge-to-vote-yes-for-a-fair-tax",
+      "label": "Get involved"
+    }
   ],
   "createdBy": "Created by volunteers"
 }

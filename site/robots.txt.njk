@@ -3,10 +3,6 @@ permalink: /robots.txt
 layout: null
 eleventyExcludeFromCollections: true
 ---
-User-agent: *
-Disallow: /
-{# 
-TODO: Reenable
 {% if site.production %}
 User-agent: *
 Allow: /
@@ -15,4 +11,4 @@ Sitemap: {{ site.baseurl }}/sitemap.xml
 User-agent: *
 Disallow: /
 {% endif %}
-#}
+

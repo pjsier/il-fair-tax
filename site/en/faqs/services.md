@@ -1,10 +1,10 @@
 ---
 tags: faqs
 title: What services could the state government invest in?
-order: 5
+order: 8
 ---
 
-- Getting funding back for social services
+- Social and community services
 - Education
 - Counselors and nurses and healthcare providers in schools
 - Higher education
