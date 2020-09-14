@@ -9,8 +9,8 @@ import {
 function handleForm(form) {
   const params = formToObj(form)
 
-  const currentTax = calculateCurrentTax(params)
-  const fairTax = calculateFairTax(params)
+  const currentTax = Math.round(calculateCurrentTax(params))
+  const fairTax = Math.round(calculateFairTax(params))
   const difference = fairTax - currentTax
 
   updateResults({
