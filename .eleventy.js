@@ -3,6 +3,8 @@ const sitemap = require("@quasibit/eleventy-plugin-sitemap")
 const { baseurl, languages } = require("./site/_data/site")
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setBrowserSyncConfig({ open: true })
+
   const markdownIt = require("markdown-it")
   const markdownItLinkAttributes = require("markdown-it-link-attributes")
 
