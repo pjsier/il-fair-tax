@@ -1,7 +1,7 @@
 ---
 tags: faqs
 title: What services could the state government invest in?
-order: 8
+order: 9
 ---
 
 - Social and community services
