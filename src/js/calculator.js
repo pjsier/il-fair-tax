@@ -4,7 +4,10 @@ import {
   formObjToSearchParams,
   formToObj,
   currencyStr,
+  debounce,
 } from "./utils"
+
+const debounceHandleForm = debounce(handleForm, 250)
 
 function handleForm(form) {
   const params = formToObj(form)
@@ -109,7 +112,7 @@ function setupJointFilerToggles(form) {
 
   const updateFields = (isChecked) => {
     jointFields.map((field) => field.classList.toggle("hidden", isChecked))
-    handleForm(form)
+    debounceHandleForm(form)
   }
 
   form.querySelectorAll(`input[name="status"]`).forEach((input) => {
@@ -133,19 +136,19 @@ function addInputListeners(form) {
       // Update dependents based on number under 17
       if (input.name === "numDependents") {
         updateDependentsFromUnder17()
-        handleForm(form)
+        debounceHandleForm(form)
       }
     })
     if (input.dataset.type === "currency") {
       input.addEventListener("focus", () => onCurrencyFocus(input))
     }
-    input.addEventListener("change", () => handleForm(form))
+    input.addEventListener("change", () => debounceHandleForm(form))
     input.addEventListener("input", () => {
       if (input.name === "numDependentsUnder17") {
         // Update the number of dependents before calculating
         updateDependentsFromUnder17()
       }
-      handleForm(form)
+      debounceHandleForm(form)
     })
   })
 }

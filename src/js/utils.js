@@ -61,3 +61,22 @@ export function currencyStr(amount) {
     minimumFractionDigits: amountNum % 1 === 0 ? 0 : 2,
   })
 }
+
+/* eslint-disable */
+// Debounce function from underscore
+export const debounce = (func, wait, immediate) => {
+  let timeout
+  return function () {
+    const context = this
+    const args = arguments
+    const later = () => {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+    const callNow = immediate && !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) func.apply(context, args)
+  }
+}
+/* eslint-enable */
