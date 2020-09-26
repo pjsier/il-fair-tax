@@ -11,7 +11,7 @@
       </li>
       {% for link in t.nav %}
       <li class="margin-bottom-1">
-        <a class="text-color-default underlined text-color-active-blue" href="{{ link.url }}" {%- if link.url[0] != "/" -%}target="_blank" rel="noopener"{%- endif -%}>{{ link.label }}</a>
+        <a class="text-color-default underlined text-color-active-blue" href="{{ link.url }}" {% if link.url[0] != "/" %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
       </li>
       {% endfor %}
       {# {% for language in site.languages %}

@@ -11,7 +11,7 @@
       <ul id="nav-menu" class="margin-0 flex-row-start">
         {% for link in t.nav %}
         <li>
-          <a href="{{ link.url }}" {%- if link.url[0] != "/" -%}target="_blank" rel="noopener"{%- endif -%}>{{ link.label }}</a>
+          <a href="{{ link.url }}" {% if link.url[0] != "/" %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
         </li>
         {% endfor %}
         {# {% for language in site.languages %}
