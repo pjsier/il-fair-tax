@@ -10,7 +10,7 @@
   "voteYesForCategories": [
     "impuesto justo",
     "las escuelas",
-    "la salud",
+    "la atención médica",
     "las carreteras",
     "trabajos"
   ],
@@ -19,7 +19,7 @@
   "getInvolved": "Get involved",
   "getInvolvedUrl": "https://actionnetwork.org/forms/pledge-to-vote-yes-for-a-fair-tax",
   "calculatorCta": "Find out for yourself how the Fair Tax would affect you and your family with the [Fair Tax Calculator](/es/calculator/)",
-  "calculatorTitle": "Impuesto justo calculadora",
+  "calculatorTitle": "Calculadora de impuesto justo",
   "calculatorDescription": "",
   "calculatorPageDescription": "Complete los detalles a continuacirpadón para ver una estimación de cuánto pagaría con un impuesto justo. No almacenamos ninguna de esta información.",
   "calculatorDisclaimer": "Tax amounts are estimates based on [approved tax rates](/en/faqs/#rates) assuming taxpayers file for credits they are eligible for.",
