@@ -16,11 +16,11 @@ style: landing.css
     <div class="max-width flex-grow-1 relative flex-row-center justify-start">
       <div class="relative flex-row-center flex-wrap">
         <div class="min-height-12">
-          <h1 class="margin-0 font-size-3 font-size-2-5-mobile line-height-1-25">
+          <h1 class="margin-0 font-size-3 font-size-2-5-mobile font-size-2-mobile-es line-height-1-25">
             {{ t.voteYesFor }} <span class="visually-hidden">{%- for category in t.voteYesForCategories -%}{{ category }}{% if not loop.last %}, {% endif %}{%- endfor -%}</span>
           </h1>
         </div>
-        <div class="flex-grow-1 font-size-3 font-size-2-5-mobile line-height-1-25 margin-left-2-5-desktop min-height-12 min-width-100-mobile relative" aria-hidden="true">
+        <div class="flex-grow-1 font-size-3 font-size-2-5-mobile font-size-2-mobile-es line-height-1-25 margin-left-2-5-desktop min-height-12 min-width-100-mobile relative" aria-hidden="true">
           {% for category in t.voteYesForCategories %}
           <span class="rotate-text">{{ category }}</span>
           {% endfor %}

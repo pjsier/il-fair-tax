@@ -40,7 +40,7 @@
   "k12Expenses": "K-12 expenses",
   "k12ExpensesHelp": "Ex: tuition payments, books, lab fees",
   "yourTaxes": "Your taxes",
-  "taxChangeUp": "Your taxes will go up <span data-template='tax-change-amount'></span>",
+  "taxChangeUp": "Sus impuestos subirán <span data-template='tax-change-amount'></span>",
   "taxChangeDown": "Your taxes will go down <span data-template='tax-change-amount'></span>",
   "taxChangeSame": "Your taxes will stay the same",
   "currentTaxes": "Current Taxes",

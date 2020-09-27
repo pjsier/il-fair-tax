@@ -97,3 +97,9 @@ main {
   fill: var(--blue);
   opacity: 0.2;
 }
+
+@media screen and (max-width: 750px) {
+  [lang="es"] .font-size-2-mobile-es {
+    font-size: var(--font-size-2);
+  }
+}
