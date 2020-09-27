@@ -47,7 +47,7 @@
   "currentTax": "Current tax",
   "fairTax": "Impuesto justo",
   "faqsTitle": "Preguntas frecuentes",
-  "faqsQuestions": "Questions",
+  "faqsQuestions": "Preguntas",
   "nav": [
     { "url": "/es/calculator/", "label": "Calculadora" },
     { "url": "/es/faqs/", "label": "Preguntas frecuentes" }

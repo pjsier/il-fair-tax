@@ -1,7 +1,7 @@
 ---
 tags: faqs
-title: What does the ballot question say?
+title: ¿Qué dice la pregunta de la boleta electoral?
 order: 1
 ---
 
-> The proposed amendment grants the State authority to impose higher income tax rates on higher income levels, which is how the federal government and a majority of other states do it. The amendment would remove the portion of the Revenue Article of the Illinois Constitution that is sometimes referred to as the “flat tax,” that requires all taxes on income to be at the same rate. The amendment does not itself change tax rates. It gives the State the ability to impose higher tax rates on those with higher income levels and lower tax rates on those with middle or lower income levels. You are asked to decide whether the proposed amendment should become a part of the Illinois Constitution.
+> La propuesta enmienda otorga autoridad al Estado a imponer tasas de impuesto más altas a niveles de ingrosos más altos, lo cual es cómo lo hace el gobierno federal y una mayoría de otros estados. La enmienda removería la parte del Artículo de Ingreso de la Constitución de Illinois, el cual es referido a veces como el "impuesto plano (flat tax)" que requiere que todos los impuestos en ingresos estén al mismo nivel en tasas. La enmienda por sí sola no cambia las tasas de impuestos. Otorga al Estado la habilidad de imponer tasas más altas a esos niveles de ingresos más altos, y bajar tasas de impuestos a esos niveles medios o más bajos de ingreso. Se le ha pedido a usted que decida si la propuesta enmienda debiera de ser parte de la Constitución de Illinois.
