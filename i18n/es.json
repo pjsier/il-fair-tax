@@ -52,5 +52,6 @@
     { "url": "/es/calculator/", "label": "Calculadora" },
     { "url": "/es/faqs/", "label": "Preguntas frecuentes" }
   ],
-  "createdBy": "Created by volunteers"
+  "createdBy": "Created by volunteers",
+  "openSource": "Open source on GitHub"
 }
